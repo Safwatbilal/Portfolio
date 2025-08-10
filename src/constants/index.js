@@ -63,8 +63,9 @@ export const myProjects = [
     subdesc:
       'Built with Next.js 14, Tailwind CSS, TypeScript, and Framer Motion, Turbo Type also lets you organize typing competitions with friends for a fun and competitive experience.',
     href: 'https://turbo-type-c7ku.vercel.app/',
-    texture: '/textures/project/project2.mp4',
-    logo: '/assets/project-logo2.png',
+    texture: 'project/3.png',
+    texture2: 'project/4.png',
+    logo: 'https://cdn-icons-png.flaticon.com/512/2491/2491154.png',
     logoStyle: {
       backgroundColor: '#1E293B',
       border: '0.2px solid #334155',
@@ -72,26 +73,15 @@ export const myProjects = [
     },
     spotlight: '/assets/spotlight2.png',
     tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: '/assets/tailwindcss.png',
-      },
+      { id: 1, name: 'React.js', path: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+      { id: 2, name: 'TailwindCSS', path: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg' },
       {
         id: 3,
         name: 'TypeScript',
-        path: '/assets/typescript.png',
+        path: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
       },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
-      },
+      { id: 4, name: 'Framer Motion', path: 'https://www.vectorlogo.zone/logos/framer/framer-icon.svg' },
+      { id: 5, name: 'Next.js', path: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
     ],
   },
 
@@ -101,8 +91,9 @@ export const myProjects = [
     subdesc:
       'Built with Next.js, Tailwind CSS, TypeScript, and React Query, Belawaseet offers a user-friendly interface to streamline rental management, including listing properties, tracking payments, and monitoring rental agreements.',
     href: 'https://belawaseet.vercel.app/home',
-    texture: '/textures/project/project3.mp4',
-    logo: '/assets/project-logo3.png',
+    texture: '/project/9.png',
+    texture2: '/project/10.png',
+    logo: 'https://cdn-icons-png.flaticon.com/512/1048/1048945.png', // House/Property management icon
     logoStyle: {
       backgroundColor: '#0F172A',
       border: '0.2px solid #1E293B',
@@ -110,140 +101,114 @@ export const myProjects = [
     },
     spotlight: '/assets/spotlight3.png',
     tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: '/assets/tailwindcss.png',
-      },
+      { id: 1, name: 'React.js', path: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+      { id: 2, name: 'TailwindCSS', path: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg' },
       {
         id: 3,
         name: 'TypeScript',
-        path: '/assets/typescript.png',
+        path: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
       },
       {
         id: 4,
         name: 'React Query',
-        path: '/assets/react-query.png',
+        path: 'https://seeklogo.com/images/R/react-query-logo-1340EA4CE9-seeklogo.com.png',
       },
+
+      { id: 6, name: 'shadcn/ui', path: 'https://avatars.githubusercontent.com/u/139895814?s=280&v=4' },
     ],
   },
 
   {
-    title: 'CarePulse - Health Management System',
-    desc: 'An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.',
+    title: 'OrderFood - Online Food Ordering App',
+    desc: 'OrderFood is a user-friendly app that lets you browse menus, place food orders, and track deliveries in real time.',
     subdesc:
-      'With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
-    href: 'https://www.youtube.com/watch?v=lEflo_sc82g',
-    texture: '/textures/project/project3.mp4',
-    logo: '/assets/project-logo3.png',
+      'Built with React and Firebase, OrderFood offers a seamless experience for food lovers to order from their favorite restaurants quickly and easily.',
+    href: 'https://order-app-6cf00.web.app/',
+    texture: '/project/5.png',
+    texture2: '/project/6.png',
+    logo: 'https://cdn-icons-png.flaticon.com/512/1046/1046857.png', // Food/Restaurant icon
     logoStyle: {
-      backgroundColor: '#60f5a1',
-      background:
-        'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
-      border: '0.2px solid rgba(208, 213, 221, 1)',
-      boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
-    },
-    spotlight: '/assets/spotlight3.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
-      },
-      {
-        id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
-      },
-    ],
-  },
-  {
-    title: 'Horizon - Online Banking Platform',
-    desc: 'Horizon is a comprehensive online banking platform that offers users a centralized finance management dashboard. It allows users to connect multiple bank accounts, monitor real-time transactions, and seamlessly transfer money to other users.',
-    subdesc:
-      'Built with Next.js 14 Appwrite, Dwolla and Plaid, Horizon ensures a smooth and secure banking experience, tailored to meet the needs of modern consumers.',
-    href: 'https://www.youtube.com/watch?v=PuOVqP_cjkE',
-    texture: '/textures/project/project4.mp4',
-    logo: '/assets/project-logo4.png',
-    logoStyle: {
-      backgroundColor: '#0E1F38',
-      border: '0.2px solid #0E2D58',
-      boxShadow: '0px 0px 60px 0px #2F67B64D',
+      backgroundColor: '#1E293B',
+      border: '0.2px solid #334155',
+      boxShadow: '0px 0px 50px 0px #FF6B35AA',
     },
     spotlight: '/assets/spotlight4.png',
     tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
+      { id: 1, name: 'React.js', path: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
       {
         id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
+        name: 'Firebase',
+        path: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
       },
       {
         id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
+        name: 'JavaScript',
+        path: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
       },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
-      },
+      { id: 4, name: 'TailwindCSS', path: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg' },
+
+      { id: 6, name: 'shadcn/ui', path: 'https://avatars.githubusercontent.com/u/139895814?s=280&v=4' },
     ],
   },
+
   {
-    title: 'Imaginify - AI Photo Manipulation App',
-    desc: 'Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.',
+    title: 'BookHouse - Real Estate Listing Platform',
+    desc: 'BookHouse is a modern platform to explore, list, and manage real estate properties with detailed information and interactive UI.',
     subdesc:
-      'Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.',
-    href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
-    texture: '/textures/project/project5.mp4',
-    logo: '/assets/project-logo5.png',
+      'Developed using Next.js and Tailwind CSS, BookHouse helps users find or rent homes with ease and confidence.',
+    href: 'https://bilal-uq1e.vercel.app/',
+    texture: '/project/7.png',
+    texture2: '/project/8.png',
+    logo: 'https://cdn-icons-png.flaticon.com/512/1048/1048312.png', // Real Estate/House icon
     logoStyle: {
-      backgroundColor: '#1C1A43',
-      border: '0.2px solid #252262',
-      boxShadow: '0px 0px 60px 0px #635BFF4D',
+      backgroundColor: '#0F172A',
+      border: '0.2px solid #1E293B',
+      boxShadow: '0px 0px 60px 0px #10B981AA',
     },
     spotlight: '/assets/spotlight5.png',
     tags: [
+      { id: 1, name: 'Next.js', path: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+      { id: 2, name: 'React.js', path: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+      { id: 3, name: 'TailwindCSS', path: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg' },
       {
-        id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
+        id: 4,
+        name: 'TypeScript',
+        path: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
       },
+      { id: 5, name: 'shadcn/ui', path: 'https://avatars.githubusercontent.com/u/139895814?s=280&v=4' },
+    ],
+  },
+
+  {
+    title: 'Hire Way - Job Search & Recruitment Platform',
+    desc: 'Hire Way connects job seekers with employers through an intuitive interface for browsing jobs and submitting applications.',
+    subdesc:
+      'Created with React and Firebase, Hire Way streamlines the recruitment process for both candidates and recruiters.',
+    href: 'https://hire-way-pxgt.vercel.app/',
+    texture: '/project/1.png',
+    texture2: '/project/2.png',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+    logoStyle: {
+      backgroundColor: '#0F172A',
+      border: '0.2px solid #1E293B',
+      boxShadow: '0px 0px 60px 0px #F59E0BAA',
+    },
+    spotlight: '/assets/spotlight2.png',
+    tags: [
+      { id: 1, name: 'React.js', path: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
       {
         id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
+        name: 'Firebase',
+        path: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
       },
       {
         id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
+        name: 'JavaScript',
+        path: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
       },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
-      },
+      { id: 4, name: 'TailwindCSS', path: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg' },
+      { id: 5, name: 'Next.js', path: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+      { id: 6, name: 'shadcn/ui', path: 'https://avatars.githubusercontent.com/u/139895814?s=280&v=4' },
     ],
   },
 ];
@@ -262,32 +227,92 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
 export const workExperiences = [
   {
     id: 1,
-    name: 'Framer',
-    pos: 'Lead Web Developer',
-    duration: '2022 - Present',
+    name: 'Ulutech',
+    pos: 'Frontend Developer Intern',
+    duration: '01/2025 - 04/2025',
     title:
-      'Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.',
-    icon: '/assets/framer.svg',
+      'Completed a professional training internship at Ulutech in Aleppo, gaining hands-on experience working on real projects in an office environment, collaborating with teams, and applying best practices in frontend development.',
+    icon: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+    animation: 'clapping',
+  },
+  {
+    id: 2,
+    name: 'Nebu',
+    pos: 'Frontend Developer',
+    duration: '05/2025 - Present',
+    title:
+      'Currently working as a frontend developer at Nebu, a Malaysia-based company, contributing remotely to building scalable and user-friendly web applications, collaborating with cross-functional teams, and continuously enhancing my skills.',
+    icon: 'assets/nebu.svg',
+    animation: 'salute',
+  },
+];
+
+export const problemSolvingExperiences = [
+  {
+    id: 1,
+    name: 'ACPC',
+    pos: 'Problem Solver',
+    duration: '2022 - 2023',
+    title:
+      'Participated in the Aleppo programming competition and secured 7th place, enhancing my problem-solving and algorithm skills.',
+    icon: 'https://cdn-icons-png.flaticon.com/512/1055/1055646.png', // كأس البرمجة
     animation: 'victory',
   },
   {
     id: 2,
-    name: 'Figma',
-    pos: 'Web Developer',
-    duration: '2020 - 2022',
+    name: 'SCPC',
+    pos: 'Problem Solver',
+    duration: '2023 - 2024',
     title:
-      'Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.',
-    icon: '/assets/figma.svg',
+      'Participated again in the Aleppo competition, achieving 5th place, which qualified me for the Syrian competition, where I ranked 20th nationwide.',
+    icon: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png', // ميدالية
     animation: 'clapping',
   },
+];
+export const platformLinks = [
   {
-    id: 3,
-    name: 'Notion',
-    pos: 'Junior Web Developer',
-    duration: '2019 - 2020',
-    title:
-      'Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.',
-    icon: '/assets/notion.svg',
-    animation: 'salute',
+    name: 'Codeforces',
+    path: 'https://sta.codeforces.com/s/81454/images/codeforces-logo-with-telegram.png',
+    url: 'https://codeforces.com/profile/Recursive-Thinker',
+  },
+  {
+    name: 'LeetCode',
+    path: 'https://leetcode.com/static/images/LeetCode_logo_rvs.png',
+    url: 'https://leetcode.com/safwatbilal',
+  },
+  {
+    name: 'CSES',
+    path: 'https://cses.fi/file/cses_logo_light.svg',
+    url: 'https://cses.fi/user/safwatbilal',
+  },
+];
+export const socialLinks = [
+  {
+    name: 'Email',
+    url: 'mailto:safwetbilal65@gmail.com',
+    icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg',
+    color: '#EA4335',
+    display: 'safwetbilal65@gmail.com',
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/safwat-bilal-476006231',
+    icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg',
+    color: '#0A66C2',
+    display: 'LinkedIn Profile',
+  },
+  {
+    name: 'GitHub',
+    url: 'https://github.com/Safwatbilal',
+    icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg',
+    color: '#FFFFFF',
+    display: 'GitHub Profile',
+  },
+  {
+    name: 'GitLab',
+    url: 'https://gitlab.com/safwatbilal',
+    icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gitlab.svg',
+    color: '#FC6D26',
+    display: 'GitLab Profile',
   },
 ];

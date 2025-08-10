@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Globe from 'react-globe.gl';
 
 import Button from '../components/Button.jsx';
+import { socialLinks } from '../constants/index.js';
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
@@ -15,6 +16,8 @@ const About = () => {
     }, 2000);
   };
 
+  // Social media links data
+
   return (
     <section className="c-space my-20" id="about">
       <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
@@ -23,7 +26,7 @@ const About = () => {
             <img src="assets/grid1.png" alt="grid-1" className="w-full sm:h-[276px] h-fit object-contain" />
 
             <div>
-              <p className="grid-headtext">Hi, I’m Safwat Bilal</p>
+              <p className="grid-headtext">Hi, I&rsquo;m Safwat Bilal</p>
               <p className="grid-subtext">
                 I am a fifth-year Informatics Engineering student at the University of Aleppo, specializing in frontend
                 development and building dynamic, responsive, and visually appealing web applications
@@ -62,8 +65,8 @@ const About = () => {
               />
             </div>
             <div>
-              <p className="grid-headtext">I’m very flexible with time zone communications & locations</p>
-              <p className="grid-subtext">I&apos;m based in Rjieka, Croatia and open to remote work worldwide.</p>
+              <p className="grid-headtext">I&rsquo;m very flexible with time zone communications &amp; locations</p>
+              <p className="grid-subtext">I&rsquo;m based in Rjieka, Croatia and open to remote work worldwide.</p>
               <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
             </div>
           </div>
@@ -71,16 +74,61 @@ const About = () => {
 
         <div className="xl:col-span-2 xl:row-span-3">
           <div className="grid-container">
-            <img src="assets/grid3.png" alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain" />
-
             <div>
-              <p className="grid-headtext">My Passion for Coding</p>
-              <p className="grid-subtext">
-                Over two years of experience in problem solving on platforms like Codeforces, LeetCode, and CSES, with
-                more than 1500 problems solved. Specialized in competitive programming with strong performance in
-                contests. In the 2022-2023 season, participated in the first Aleppo programming competition, achieving
-                10th place citywide. In the 2023-2024 season, ranked 5th in Aleppo and 20th nationwide in Syria.
+              <img src="assets/grid3.png" alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain" />
+
+              <p className="grid-headtext">Connect With Me</p>
+              <p className="grid-subtext mb-8">
+                Feel free to reach out through any of these platforms. I&rsquo;m always open to discussing new
+                opportunities and collaborating on exciting projects.
               </p>
+
+              <div className="relative z-10 flex items-center justify-between flex-wrap gap-5">
+                <div className="flex items-center gap-3 flex-wrap">
+                  {socialLinks.map((link, index) => (
+                    <a
+                      key={index}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="tech-logo group relative p-3 rounded-lg transition-all duration-300 hover:scale-110"
+                      style={{
+                        backgroundColor: `${link.color}15`,
+                        border: `2px solid ${link.color}30`,
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = `${link.color}25`;
+                        e.currentTarget.style.borderColor = `${link.color}60`;
+                        e.currentTarget.style.transform = 'scale(1.1)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = `${link.color}15`;
+                        e.currentTarget.style.borderColor = `${link.color}30`;
+                        e.currentTarget.style.transform = 'scale(1)';
+                      }}>
+                      <div
+                        className="w-12 h-12 transition-all duration-300"
+                        style={{
+                          backgroundColor: link.color,
+                          maskImage: `url(${link.icon})`,
+                          maskRepeat: 'no-repeat',
+                          maskSize: 'contain',
+                          maskPosition: 'center',
+                          WebkitMaskImage: `url(${link.icon})`,
+                          WebkitMaskRepeat: 'no-repeat',
+                          WebkitMaskSize: 'contain',
+                          WebkitMaskPosition: 'center',
+                        }}
+                      />
+                      <span
+                        className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap"
+                        style={{ color: link.color }}>
+                        {link.name}
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -97,7 +145,9 @@ const About = () => {
               <p className="grid-subtext text-center">Contact me</p>
               <div className="copy-container" onClick={handleCopy}>
                 <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" />
-                <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">Safwat@jsmastery.pro</p>
+                <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">
+                  safwetbilal65@gmail.com
+                </p>
               </div>
             </div>
           </div>
