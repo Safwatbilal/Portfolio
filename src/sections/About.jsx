@@ -28,8 +28,9 @@ const About = () => {
             <div>
               <p className="grid-headtext">Hi, I&rsquo;m Safwat Bilal</p>
               <p className="grid-subtext">
-                I am a fifth-year Informatics Engineering student at the University of Aleppo, specializing in frontend
-                development and building dynamic, responsive, and visually appealing web applications
+                Final-year Informatics Engineering student at the University of Aleppo, specializing in Frontend
+                Development. Skilled in building dynamic, responsive, and visually engaging web applications** focused
+                on user experience.
               </p>
             </div>
           </div>
@@ -61,12 +62,11 @@ const About = () => {
                 showGraticules
                 globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
                 bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-                labelsData={[{ lat: 40, lng: -100, text: 'Rjieka, Croatia', color: 'white', size: 15 }]}
               />
             </div>
             <div>
               <p className="grid-headtext">I&rsquo;m very flexible with time zone communications &amp; locations</p>
-              <p className="grid-subtext">I&rsquo;m based in Rjieka, Croatia and open to remote work worldwide.</p>
+
               <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
             </div>
           </div>

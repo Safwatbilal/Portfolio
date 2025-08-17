@@ -21,16 +21,12 @@ const Navbar = () => {
 
   // Function to handle CV download
   const downloadCV = () => {
-    // Option 1: Direct link to your CV file
     const link = document.createElement('a');
-    link.href = '/assets/Safwat_CV.pdf'; // Update this path to your CV file
-    link.download = 'Safwat_CV.pdf'; // The name for the downloaded file
+    link.href = 'https://drive.google.com/uc?export=download&id=1wtwusYYGlCADtqanTie8lKgTscdX7AzS'; // Google Drive direct link
+    link.download = 'Safwat_CV.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-
-    // Option 2: If you want to open in new tab instead of download:
-    // window.open('/assets/Safwat_CV.pdf', '_blank');
 
     closeMenu(); // Close mobile menu if open
   };
