@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Globe from 'react-globe.gl';
 
 import Button from '../components/Button.jsx';
 import { socialLinks } from '../constants/index.js';
@@ -53,16 +52,50 @@ const About = () => {
         <div className="col-span-1 xl:row-span-4">
           <div className="grid-container">
             <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
-              <Globe
-                height={326}
-                width={326}
-                backgroundColor="rgba(0, 0, 0, 0)"
-                backgroundImageOpacity={0.5}
-                showAtmosphere
-                showGraticules
-                globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-                bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-              />
+              <div className="flex items-center gap-3 flex-wrap">
+                {socialLinks.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="tech-logo group relative p-3 rounded-lg transition-all duration-300 hover:scale-110"
+                    style={{
+                      backgroundColor: `${link.color}15`,
+                      border: `2px solid ${link.color}30`,
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = `${link.color}25`;
+                      e.currentTarget.style.borderColor = `${link.color}60`;
+                      e.currentTarget.style.transform = 'scale(1.1)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = `${link.color}15`;
+                      e.currentTarget.style.borderColor = `${link.color}30`;
+                      e.currentTarget.style.transform = 'scale(1)';
+                    }}>
+                    <div
+                      className="w-12 h-12 transition-all duration-300"
+                      style={{
+                        backgroundColor: link.color,
+                        maskImage: `url(${link.icon})`,
+                        maskRepeat: 'no-repeat',
+                        maskSize: 'contain',
+                        maskPosition: 'center',
+                        WebkitMaskImage: `url(${link.icon})`,
+                        WebkitMaskRepeat: 'no-repeat',
+                        WebkitMaskSize: 'contain',
+                        WebkitMaskPosition: 'center',
+                      }}
+                    />
+                    <span
+                      className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap"
+                      style={{ color: link.color }}>
+                      {link.name}
+                    </span>
+                  </a>
+                ))}
+              </div>
             </div>
             <div>
               <p className="grid-headtext">I&rsquo;m very flexible with time zone communications &amp; locations</p>
@@ -83,52 +116,7 @@ const About = () => {
                 opportunities and collaborating on exciting projects.
               </p>
 
-              <div className="relative z-10 flex items-center justify-between flex-wrap gap-5">
-                <div className="flex items-center gap-3 flex-wrap">
-                  {socialLinks.map((link, index) => (
-                    <a
-                      key={index}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="tech-logo group relative p-3 rounded-lg transition-all duration-300 hover:scale-110"
-                      style={{
-                        backgroundColor: `${link.color}15`,
-                        border: `2px solid ${link.color}30`,
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = `${link.color}25`;
-                        e.currentTarget.style.borderColor = `${link.color}60`;
-                        e.currentTarget.style.transform = 'scale(1.1)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = `${link.color}15`;
-                        e.currentTarget.style.borderColor = `${link.color}30`;
-                        e.currentTarget.style.transform = 'scale(1)';
-                      }}>
-                      <div
-                        className="w-12 h-12 transition-all duration-300"
-                        style={{
-                          backgroundColor: link.color,
-                          maskImage: `url(${link.icon})`,
-                          maskRepeat: 'no-repeat',
-                          maskSize: 'contain',
-                          maskPosition: 'center',
-                          WebkitMaskImage: `url(${link.icon})`,
-                          WebkitMaskRepeat: 'no-repeat',
-                          WebkitMaskSize: 'contain',
-                          WebkitMaskPosition: 'center',
-                        }}
-                      />
-                      <span
-                        className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap"
-                        style={{ color: link.color }}>
-                        {link.name}
-                      </span>
-                    </a>
-                  ))}
-                </div>
-              </div>
+              <div className="relative z-10 flex items-center justify-between flex-wrap gap-5"></div>
             </div>
           </div>
         </div>
