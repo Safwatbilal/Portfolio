@@ -5,6 +5,7 @@ import Navbar from './sections/Navbar.jsx';
 import Projects from './sections/Projects.jsx';
 import WorkExperience from './sections/Experience.jsx';
 import ProblemSolving from './sections/ProblemSolving.jsx';
+import Skills from './sections/Skills.jsx';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <About />
+      <Skills />
       <Projects />
 
       <ProblemSolving />

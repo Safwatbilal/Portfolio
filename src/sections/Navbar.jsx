@@ -22,7 +22,7 @@ const Navbar = () => {
   // Function to handle CV download
   const downloadCV = () => {
     const link = document.createElement('a');
-    link.href = 'https://drive.google.com/uc?export=download&id=1wtwusYYGlCADtqanTie8lKgTscdX7AzS'; // Google Drive direct link
+    link.href = 'https://drive.google.com/file/d/1PEyC4xwg84WFvHy990wo5j9vaEIDznJv/view?usp=sharing'; // Google Drive direct link
     link.download = 'Safwat_CV.pdf';
     document.body.appendChild(link);
     link.click();
@@ -51,7 +51,7 @@ const Navbar = () => {
             <button
               onClick={downloadCV}
               className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 font-medium">
-              Download CV
+               CV
             </button>
           </nav>
         </div>
