@@ -26,11 +26,11 @@ export const ar: Dictionary = {
   hero: {
     label: "Frontend Developer · في بداية الـ Backend مع Node.js وNestJS",
     heading: "واجهات واضحة لمنتجات معقّدة.",
-    lead: "أنا صفوت بلال، Frontend Developer من حلب، سوريا، ولديّ معرفة مبتدئة بالـ Backend عبر Node.js وNestJS. منذ 2024 أعمل على الجانب الداخلي من منتجات حقيقية: لوحات تحكم لصنّاع المعرفة، ومسارات الاشتراك والدفع، وتطبيقات للمبيعات الميدانية، بالعربية والإنجليزية.",
+    lead: "أنا صفوت بلال، Frontend Developer من حلب، سوريا، ولديّ معرفة مبتدئة بالـ Backend عبر Node.js وNestJS. منذ 2023 أعمل على الجانب الداخلي من منتجات حقيقية: لوحات تحكم لصنّاع المعرفة، ومسارات الاشتراك والدفع، وتطبيقات للمبيعات الميدانية، بالعربية والإنجليزية.",
     proof: [
       { label: "حالياً", text: "Frontend Developer في Kadnya، منصة لصنّاع المعرفة العرب" },
-      { label: "Co-founder", text: "Tredro: 3 تطبيقات تعمل فعلياً لتوزيع الجملة" },
-      { label: "ثنائي اللغة", text: "واجهات عربية وإنجليزية مع دعم كامل لـ RTL" },
+      { label: "Co-founder", text: "Tredro: شركة ناشئة نبنيها مع سوق الجملة، ونتواصل الآن مع التجار" },
+      { label: "Backend", text: "مستوى مبتدئ مع Node.js وNestJS، في طريقي إلى Full-stack" },
     ],
     ctaWork: "استعرض الأعمال",
     ctaCv: "تحميل السيرة الذاتية",
@@ -83,7 +83,7 @@ export const ar: Dictionary = {
         caseStudy: "nebu",
       },
       {
-        period: "تموز – كانون الأول 2024",
+        period: "تموز – كانون الأول 2023",
         role: "Frontend Developer Intern",
         company: "Ulutech",
         place: "حلب",

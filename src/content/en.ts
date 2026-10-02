@@ -26,11 +26,11 @@ export const en: Dictionary = {
   hero: {
     label: "Frontend Developer · Junior on the backend with Node.js & NestJS",
     heading: "Clear interfaces for complex products.",
-    lead: "I'm Safwat Bilal, a frontend developer from Aleppo, Syria, with junior-level backend knowledge in Node.js and NestJS. Since 2024 I've been building the logged-in side of real products: creator dashboards, subscription and payment flows, and field-sales apps, in Arabic and English.",
+    lead: "I'm Safwat Bilal, a frontend developer from Aleppo, Syria, with junior-level backend knowledge in Node.js and NestJS. Since 2023 I've been building the logged-in side of real products: creator dashboards, subscription and payment flows, and field-sales apps, in Arabic and English.",
     proof: [
       { label: "Now", text: "Frontend Developer at Kadnya, a platform for Arabic-speaking creators" },
-      { label: "Co-founder", text: "Tredro, 3 live apps for wholesale distribution" },
-      { label: "Bilingual", text: "Arabic & English interfaces, RTL included" },
+      { label: "Co-founder", text: "Tredro, a startup built with the wholesale market, now in talks with merchants" },
+      { label: "Backend", text: "Junior with Node.js & NestJS, growing toward full-stack" },
     ],
     ctaWork: "See selected work",
     ctaCv: "Download CV",
@@ -85,7 +85,7 @@ export const en: Dictionary = {
         caseStudy: "nebu",
       },
       {
-        period: "Jul 2024 – Dec 2024",
+        period: "Jul 2023 – Dec 2023",
         role: "Frontend Developer Intern",
         company: "Ulutech",
         place: "Aleppo",
