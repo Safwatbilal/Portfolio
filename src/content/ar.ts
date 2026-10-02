@@ -83,7 +83,7 @@ export const ar: Dictionary = {
         caseStudy: "nebu",
       },
       {
-        period: "تموز – كانون الأول 2023",
+        period: "تموز – كانون الأول 2024",
         role: "Frontend Developer Intern",
         company: "Ulutech",
         place: "حلب",

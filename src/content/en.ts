@@ -85,7 +85,7 @@ export const en: Dictionary = {
         caseStudy: "nebu",
       },
       {
-        period: "Jul 2023 – Dec 2023",
+        period: "Jul 2024 – Dec 2024",
         role: "Frontend Developer Intern",
         company: "Ulutech",
         place: "Aleppo",
