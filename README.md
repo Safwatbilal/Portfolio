@@ -14,20 +14,36 @@ Live: [safwatbilal.vercel.app](https://safwatbilal.vercel.app)
 ```
 src/
 ├── app/
-│   ├── page.tsx                  Home: hero, work, experience, capabilities, about, contact
-│   ├── work/[slug]/page.tsx      Case studies (statically generated)
-│   ├── opengraph-image.tsx       Generated OG images (also per case study)
+│   ├── [locale]/page.tsx         Home (en / ar)
+│   ├── [locale]/work/[slug]/     Case studies (statically generated)
+│   ├── [locale]/layout.tsx       Root layout: lang/dir, fonts, metadata, hreflang
 │   ├── sitemap.ts · robots.ts · manifest.ts · icon.svg
-│   └── globals.css               Design tokens + typography utilities
+│   └── [locale]/globals.css      Design tokens + typography utilities
 ├── components/                   Header, footer, logo, icons, schematic visuals, UI primitives
-├── content/                      ← all text lives here (profile, projects, experience)
+├── content/                      ← all text lives here (en.ts, ar.ts, shared.ts)
+├── i18n/config.ts                Locales and helpers
+├── proxy.ts                      Language redirect for unprefixed URLs
 └── lib/og.tsx                    Shared OG image template
 public/safwat-bilal-cv.pdf        Downloadable CV
 ```
 
+## Languages
+The site is bilingual: English at `/en`, Arabic (RTL) at `/ar`. `src/proxy.ts` redirects `/` and old `/work/*` links based on the browser language.
+
 ## Editing content
-All copy lives in typed files under `src/content/`. Change text there; TypeScript flags any missing fields.
-To replace the CV, overwrite `public/safwat-bilal-cv.pdf`.
+- English copy: `src/content/en.ts`. Arabic copy: `src/content/ar.ts`. Both share the `Dictionary` type in `src/content/types.ts`, so a missing translation is a type error.
+- Language-independent facts (links, logos, tags, project order): `src/content/shared.ts`.
+- To replace the CV, overwrite `public/safwat-bilal-cv.pdf`.
+
+## Project screenshots
+Drop images into `public/projects/<slug>/` (`kadnya`, `tredro`, `nebu`, `suttor`). They are picked up at build time and sorted by file name:
+- the first image (e.g. `01-dashboard.png`) replaces the schematic on the home page and case study;
+- the rest appear in a "Screens" gallery on the case study.
+
+Use 1440×900 (16:10) PNG/WebP captures, and **blur any real customer data** before committing.
+
+## Project logos
+`public/logos/<slug>.png` (128×128, transparent).
 
 ## Commands
 ```bash

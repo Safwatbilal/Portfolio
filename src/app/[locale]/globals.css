@@ -73,7 +73,7 @@
   --color-ok: var(--ok);
   --font-sans: var(--font-plex), var(--font-plex-ar), ui-sans-serif, system-ui, sans-serif;
   --font-arabic: var(--font-plex-ar), var(--font-plex), sans-serif;
-  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  --font-mono: var(--font-plex-mono), var(--font-plex-ar), ui-monospace, monospace;
   --ease-brand: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
@@ -219,4 +219,72 @@ body {
   :root:not([data-theme="light"]) .theme-icon-moon {
     display: none;
   }
+}
+
+/* Logo motion: the two modules assemble once on load, then nudge on hover */
+.mark-a,
+.mark-b {
+  transform-box: fill-box;
+}
+.mark-animated .mark-a {
+  animation: mark-in-a 700ms var(--ease-brand) both;
+}
+.mark-animated .mark-b {
+  animation: mark-in-b 700ms 120ms var(--ease-brand) both;
+}
+.group:hover .mark-b,
+.group:focus-visible .mark-b {
+  animation: mark-nudge 420ms var(--ease-brand);
+}
+@keyframes mark-in-a {
+  from {
+    opacity: 0;
+    transform: translate(-6px, -6px);
+  }
+}
+@keyframes mark-in-b {
+  from {
+    opacity: 0;
+    transform: translate(6px, 6px);
+  }
+}
+@keyframes mark-nudge {
+  40% {
+    transform: translate(2px, 2px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mark-a,
+  .mark-b {
+    animation: none !important;
+  }
+}
+
+/* Arabic: letter-spacing breaks Arabic letter joining, so it's removed in RTL */
+[dir="rtl"] body {
+  font-family: var(--font-arabic);
+}
+[dir="rtl"] .display,
+[dir="rtl"] .h2,
+[dir="rtl"] .h3,
+[dir="rtl"] .label,
+[dir="rtl"] .wordmark {
+  letter-spacing: 0;
+}
+[dir="rtl"] .label {
+  font-family: var(--font-arabic);
+  font-size: 0.8125rem;
+  text-transform: none;
+}
+[dir="rtl"] .display {
+  line-height: 1.25;
+}
+[dir="rtl"] .h2 {
+  line-height: 1.35;
+}
+[dir="rtl"] .lead {
+  line-height: 1.85;
+}
+.wordmark {
+  letter-spacing: -0.02em;
 }

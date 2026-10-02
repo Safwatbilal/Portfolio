@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
-import type { Project } from "@/content/projects";
+import Image from "next/image";
+import type { Project } from "@/content";
 
 // Schematic UI sketches, used where real screenshots can't be published
 // (private dashboards). Always captioned as schematics. Never present them as
@@ -231,33 +232,31 @@ function Nebu() {
   );
 }
 
-function MediCare() {
+function Suttor() {
   return (
-    <Browser url="medicare · /ar/auth/login">
-      <div className="grid place-items-center p-4">
-        <div className="w-full max-w-56 space-y-2 rounded-lg border border-line p-3">
-          <div className="flex items-center justify-between">
-            <p className="font-semibold text-ink">Verify identity</p>
-            <span className="flex overflow-hidden rounded border border-line font-mono">
-              <span className="bg-accent px-1 text-on-accent">AR</span>
-              <span className="px-1 text-ink-2">EN</span>
-            </span>
-          </div>
-          <Bar w="80%" />
-          <div className="flex justify-between gap-1" dir="ltr">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <span
-                key={i}
-                className={`grid aspect-square flex-1 place-items-center rounded border font-mono ${
-                  i < 4 ? "border-accent/60 text-ink" : "border-line text-ink-3"
-                }`}
-              >
-                {i < 4 ? "•" : ""}
-              </span>
-            ))}
-          </div>
-          <span className="block rounded bg-accent py-1 text-center font-semibold text-on-accent">
-            Verify &amp; sign in
+    <Browser url="suttor.vercel.app" rtl>
+      <div className="grid grid-cols-[1.3fr_1fr] gap-2.5 p-2.5">
+        <div className="space-y-1.5 rounded-lg border border-line p-2">
+          <p className="font-semibold text-ink">قائمة القراءة</p>
+          {[72, 40, 15].map((w, i) => (
+            <div key={i} className="flex items-center gap-2 rounded-md border border-line p-1.5">
+              <span className="h-7 w-5 shrink-0 rounded-sm bg-[#E8620C]/70" />
+              <div className="flex-1 space-y-1">
+                <Bar w="70%" strong />
+                <span className="block h-1 rounded-full bg-surface-2">
+                  <span className="block h-1 rounded-full bg-[#E8620C]" style={{ width: `${w}%` }} />
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="space-y-1.5 rounded-lg border border-line p-2">
+          <p className="font-semibold text-ink">ملاحظاتي</p>
+          <Bar w="90%" />
+          <Bar w="75%" />
+          <Bar w="85%" />
+          <span className="mt-2 block rounded bg-[#E8620C] py-1 text-center font-semibold text-white">
+            سجّل تقدّمك اليومي
           </span>
         </div>
       </div>
@@ -265,22 +264,53 @@ function MediCare() {
   );
 }
 
-const visuals = { tredro: Tredro, kadnya: Kadnya, nebu: Nebu, medicare: MediCare };
+const visuals = { tredro: Tredro, kadnya: Kadnya, nebu: Nebu, suttor: Suttor };
 
-export function ProjectVisual({ project }: { project: Project }) {
+export function ProjectVisual({
+  project,
+  labels,
+  priority = false,
+}: {
+  project: Project;
+  labels: { schematic: string; screenshot: string };
+  priority?: boolean;
+}) {
+  const shot = project.screenshots[0];
+  if (shot) {
+    return (
+      <figure className="m-0">
+        <div className="rounded-2xl bg-surface-2 p-3 sm:p-5">
+          <div className="overflow-hidden rounded-xl border border-line bg-surface">
+            <div className="flex items-center gap-1.5 border-b border-line px-3 py-2" dir="ltr">
+              <span className="size-2 rounded-full bg-line" />
+              <span className="size-2 rounded-full bg-line" />
+              <span className="size-2 rounded-full bg-line" />
+              <span className="ms-2 truncate font-mono text-[0.625rem] text-ink-3">{project.hrefLabel}</span>
+            </div>
+            <Image
+              src={shot}
+              alt={`${labels.screenshot}: ${project.name}`}
+              width={1440}
+              height={900}
+              priority={priority}
+              sizes="(min-width: 768px) 60vw, 100vw"
+              className="aspect-16/10 h-auto w-full object-cover object-top"
+            />
+          </div>
+        </div>
+        <figcaption className="label mt-2.5 text-[0.6875rem]">{labels.screenshot}</figcaption>
+      </figure>
+    );
+  }
   const Visual = visuals[project.visual];
   return (
     <figure className="m-0">
-      <div
-        role="img"
-        aria-label={project.visualAlt}
-        className="select-none rounded-2xl bg-surface-2 p-4 sm:p-6"
-      >
+      <div role="img" aria-label={project.visualAlt} className="select-none rounded-2xl bg-surface-2 p-4 sm:p-6">
         <div aria-hidden="true">
           <Visual />
         </div>
       </div>
-      <figcaption className="label mt-2.5 text-[0.6875rem]">Schematic, not a screenshot</figcaption>
+      <figcaption className="label mt-2.5 text-[0.6875rem]">{labels.schematic}</figcaption>
     </figure>
   );
 }

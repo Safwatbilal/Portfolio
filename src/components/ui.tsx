@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
 import { Icon } from "./icons";
@@ -10,41 +11,59 @@ export const buttonStyles = {
   secondary: `${base} border border-line text-ink hover:bg-surface-2`,
 };
 
+/** Directional arrow that points "forward" in both LTR and RTL. */
+export function ForwardArrow({ size = 18, className = "" }: { size?: number; className?: string }) {
+  return <Icon name="arrowRight" size={size} className={`rtl:-scale-x-100 ${className}`} />;
+}
+
 /** External link: opens in a new tab and says so to screen readers. */
 export function ExternalLink({
   href,
   children,
   className,
+  newTab,
   showIcon = true,
   ...props
-}: ComponentProps<"a"> & { showIcon?: boolean }) {
+}: ComponentProps<"a"> & { newTab: string; showIcon?: boolean }) {
   return (
     <a href={href} target="_blank" rel="noopener noreferrer" className={className} {...props}>
       {children}
-      {showIcon && <Icon name="arrowUpRight" size={16} className="shrink-0" />}
-      <span className="sr-only"> (opens in a new tab)</span>
+      {showIcon && <Icon name="arrowUpRight" size={16} className="shrink-0 rtl:-scale-x-100" />}
+      <span className="sr-only"> {newTab}</span>
     </a>
   );
 }
 
 export function Tag({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-md bg-accent-soft px-2 py-0.5 text-[0.8125rem] font-medium text-accent-ink">
+    <span
+      dir="ltr"
+      className="inline-flex items-center rounded-md bg-accent-soft px-2 py-0.5 text-[0.8125rem] font-medium text-accent-ink"
+    >
       {children}
     </span>
   );
 }
 
-export function StatusBadge({ status }: { status: "Live" | "Source" }) {
-  return status === "Live" ? (
+export function LiveBadge({ label }: { label: string }) {
+  return (
     <span className="inline-flex items-center gap-1.5 text-[0.8125rem] font-medium text-ok">
-      <span className="size-1.5 rounded-full bg-ok" aria-hidden="true" />
-      Live
+      <span className="relative flex size-1.5" aria-hidden="true">
+        <span className="absolute inline-flex size-full animate-ping rounded-full bg-ok opacity-60 motion-reduce:hidden" />
+        <span className="relative inline-flex size-1.5 rounded-full bg-ok" />
+      </span>
+      {label}
     </span>
-  ) : (
-    <span className="inline-flex items-center gap-1.5 text-[0.8125rem] font-medium text-ink-3">
-      <Icon name="github" size={14} />
-      Public repo
+  );
+}
+
+export function ProjectLogo({ src, alt, size = 40 }: { src: string; alt: string; size?: number }) {
+  return (
+    <span
+      className="grid shrink-0 place-items-center rounded-xl border border-line bg-white p-1.5"
+      style={{ width: size, height: size }}
+    >
+      <Image src={src} alt={alt} width={size - 12} height={size - 12} className="h-full w-full object-contain" />
     </span>
   );
 }
@@ -73,16 +92,9 @@ export function SectionHeader({
 
 export function TextLink({ href, children }: { href: string; children: ReactNode }) {
   return (
-    <Link
-      href={href}
-      className="group inline-flex items-center gap-1.5 font-semibold text-accent-ink"
-    >
+    <Link href={href} className="group inline-flex items-center gap-1.5 font-semibold text-accent-ink">
       {children}
-      <Icon
-        name="arrowRight"
-        size={18}
-        className="transition-transform duration-150 ease-brand group-hover:translate-x-1"
-      />
+      <ForwardArrow className="transition-transform duration-150 ease-brand group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
     </Link>
   );
 }
