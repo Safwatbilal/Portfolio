@@ -19,8 +19,8 @@ export function Header({ locale, nav, name }: { locale: Locale; nav: Dictionary[
   const otherHref = swapLocale(pathname, other);
 
   const items = [
-    { href: `/${locale}#work`, label: nav.work },
     { href: `/${locale}#experience`, label: nav.experience },
+    { href: `/${locale}#work`, label: nav.work },
     { href: `/${locale}#about`, label: nav.about },
     { href: `/${locale}#contact`, label: nav.contact },
   ];

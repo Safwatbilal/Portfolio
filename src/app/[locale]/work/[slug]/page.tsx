@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 import { Icon } from "@/components/icons";
-import { ProjectVisual } from "@/components/project-visual";
+import { ProjectVisual, ScreenshotGallery } from "@/components/project-visual";
 import { ExternalLink, LiveBadge, ProjectLogo, Tag, TextLink } from "@/components/ui";
 import { getDictionary, getProjects } from "@/content";
 import { profile, projectBases, siteUrl } from "@/content/shared";
@@ -48,7 +47,6 @@ export default async function CaseStudy(props: PageProps<"/[locale]/work/[slug]"
   const cs = p.caseStudy;
   const all = getProjects(locale);
   const next = all[(all.findIndex((x) => x.slug === p.slug) + 1) % all.length];
-  const extraShots = p.screenshots.slice(1);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -175,21 +173,9 @@ export default async function CaseStudy(props: PageProps<"/[locale]/work/[slug]"
             </Block>
           )}
 
-          {extraShots.length > 0 && (
+          {p.screenshots.length > 1 && (
             <Block title={d.caseStudy.screenshots} wide>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {extraShots.map((src, n) => (
-                  <Image
-                    key={src}
-                    src={src}
-                    alt={`${d.work.screenshot} ${n + 2}: ${p.name}`}
-                    width={1440}
-                    height={900}
-                    sizes="(min-width: 640px) 33vw, 100vw"
-                    className="aspect-16/10 h-auto w-full rounded-xl border border-line object-cover object-top"
-                  />
-                ))}
-              </div>
+              <ScreenshotGallery project={p} />
             </Block>
           )}
 

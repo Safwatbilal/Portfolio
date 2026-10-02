@@ -15,7 +15,7 @@ import {
   buttonStyles,
 } from "@/components/ui";
 import { getDictionary, getProjects } from "@/content";
-import { alsoBuiltBase, profile, siteUrl, stackItems } from "@/content/shared";
+import { alsoBuiltBase, profile, projectBases, siteUrl, stackItems, type ProjectSlug } from "@/content/shared";
 import { isLocale } from "@/i18n/config";
 
 export default async function Home(props: PageProps<"/[locale]">) {
@@ -73,6 +73,39 @@ export default async function Home(props: PageProps<"/[locale]">) {
               </div>
             ))}
           </dl>
+        </div>
+      </section>
+
+      {/* Experience */}
+      <section aria-labelledby="experience" className="border-t border-line py-16 md:py-28">
+        <div className="container-page">
+          <SectionHeader id="experience" eyebrow={d.experience.eyebrow} title={d.experience.title} />
+          <ol className="divide-y divide-line border-y border-line">
+            {d.experience.items.map((e) => (
+              <li
+                key={`${e.company}-${e.period}`}
+                className="grid gap-1 py-6 sm:grid-cols-[11rem_1fr] sm:gap-6 md:grid-cols-[13rem_1fr]"
+              >
+                <p className="font-mono text-sm text-ink-3">{e.period}</p>
+                <div className="flex gap-4">
+                  <CompanyMark slug={e.caseStudy} name={e.company} />
+                  <div>
+                  <h3 className="h3">
+                    {e.role} <span className="text-ink-3">·</span> {e.company}
+                  </h3>
+                  <p className="text-sm text-ink-3">{e.place}</p>
+                  <p className="mt-2 max-w-[68ch] text-ink-2">{e.summary}</p>
+                  {e.caseStudy && (
+                    <Link href={`/${locale}/work/${e.caseStudy}`} className="link mt-2 inline-block text-[0.9375rem]">
+                      {d.experience.caseStudy}
+                      <span className="sr-only">: {e.company}</span>
+                    </Link>
+                  )}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -137,7 +170,7 @@ export default async function Home(props: PageProps<"/[locale]">) {
             <div className="md:col-span-5">
               <p className="label mb-2">{d.work.alsoBuilt}</p>
               <p className="text-ink-2">
-                <span className="font-semibold text-ink">{locale === "ar" ? "بلا وسيط" : alsoBuiltBase.name}</span>
+                <span className="font-semibold text-ink">{alsoBuiltBase.name}</span>
                 {locale === "ar" ? "، " : ", "}
                 {d.work.alsoBuiltText}
               </p>
@@ -160,36 +193,6 @@ export default async function Home(props: PageProps<"/[locale]">) {
               />
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Experience */}
-      <section aria-labelledby="experience" className="border-t border-line py-16 md:py-28">
-        <div className="container-page">
-          <SectionHeader id="experience" eyebrow={d.experience.eyebrow} title={d.experience.title} />
-          <ol className="divide-y divide-line border-y border-line">
-            {d.experience.items.map((e) => (
-              <li
-                key={`${e.company}-${e.period}`}
-                className="grid gap-1 py-6 sm:grid-cols-[11rem_1fr] sm:gap-6 md:grid-cols-[13rem_1fr]"
-              >
-                <p className="font-mono text-sm text-ink-3">{e.period}</p>
-                <div>
-                  <h3 className="h3">
-                    {e.role} <span className="text-ink-3">·</span> {e.company}
-                  </h3>
-                  <p className="text-sm text-ink-3">{e.place}</p>
-                  <p className="mt-2 max-w-[68ch] text-ink-2">{e.summary}</p>
-                  {e.caseStudy && (
-                    <Link href={`/${locale}/work/${e.caseStudy}`} className="link mt-2 inline-block text-[0.9375rem]">
-                      {d.experience.caseStudy}
-                      <span className="sr-only">: {e.company}</span>
-                    </Link>
-                  )}
-                </div>
-              </li>
-            ))}
-          </ol>
         </div>
       </section>
 
@@ -294,5 +297,18 @@ export default async function Home(props: PageProps<"/[locale]">) {
         </div>
       </section>
     </>
+  );
+}
+
+function CompanyMark({ slug, name }: { slug?: ProjectSlug; name: string }) {
+  const logo = slug && projectBases.find((p) => p.slug === slug)?.logo;
+  if (logo) return <ProjectLogo src={logo} alt="" size={44} />;
+  return (
+    <span
+      aria-hidden="true"
+      className="grid size-11 shrink-0 place-items-center rounded-xl border border-line bg-surface font-semibold text-ink-2"
+    >
+      {name.charAt(0)}
+    </span>
   );
 }

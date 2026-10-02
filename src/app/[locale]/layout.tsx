@@ -86,7 +86,7 @@ export default async function RootLayout(props: LayoutProps<"/[locale]">) {
         >
           {d.nav.skip}
         </a>
-        <Header locale={locale} nav={d.nav} name={locale === "ar" ? profile.nameAr : profile.name} />
+        <Header locale={locale} nav={d.nav} name={profile.name} />
         <main id="main" className="flex-1">
           {props.children}
         </main>

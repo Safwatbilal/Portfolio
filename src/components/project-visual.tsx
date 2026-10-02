@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
-import type { Project } from "@/content";
+import type { Project, Screenshot } from "@/content";
 
 // Schematic UI sketches, used where real screenshots can't be published
 // (private dashboards). Always captioned as schematics. Never present them as
@@ -266,6 +266,45 @@ function Suttor() {
 
 const visuals = { tredro: Tredro, kadnya: Kadnya, nebu: Nebu, suttor: Suttor };
 
+function BrowserShot({ shot, url, priority, sizes }: { shot: Screenshot; url: string; priority?: boolean; sizes: string }) {
+  return (
+    <div className="overflow-hidden rounded-xl border border-line bg-surface">
+      <div className="flex items-center gap-1.5 border-b border-line px-3 py-2" dir="ltr">
+        <span className="size-2 rounded-full bg-line" />
+        <span className="size-2 rounded-full bg-line" />
+        <span className="size-2 rounded-full bg-line" />
+        <span className="ms-2 truncate font-mono text-[0.625rem] text-ink-3">{url}</span>
+      </div>
+      <Image
+        src={shot.src}
+        alt={shot.label}
+        width={shot.width}
+        height={shot.height}
+        priority={priority}
+        sizes={sizes}
+        className="aspect-16/10 h-auto w-full object-cover object-top"
+      />
+    </div>
+  );
+}
+
+function PhoneShot({ shot, priority }: { shot: Screenshot; priority?: boolean }) {
+  return (
+    <div className="overflow-hidden rounded-[22px] border-[5px] border-ink/85 bg-surface shadow-[0_8px_24px_-12px_rgb(20_23_31/0.25)]">
+      <Image
+        src={shot.src}
+        alt={shot.label}
+        width={shot.width}
+        height={shot.height}
+        priority={priority}
+        sizes="(min-width: 768px) 15vw, 30vw"
+        className="aspect-390/844 h-auto w-full object-cover object-top"
+      />
+    </div>
+  );
+}
+
+/** The main visual: first desktop screenshot, else phone screenshots, else the schematic. */
 export function ProjectVisual({
   project,
   labels,
@@ -275,28 +314,32 @@ export function ProjectVisual({
   labels: { schematic: string; screenshot: string };
   priority?: boolean;
 }) {
-  const shot = project.screenshots[0];
-  if (shot) {
+  const desktop = project.screenshots.find((s) => !s.phone);
+  const phones = project.screenshots.filter((s) => s.phone).slice(0, 3);
+  if (desktop) {
     return (
       <figure className="m-0">
-        <div className="rounded-2xl bg-surface-2 p-3 sm:p-5">
-          <div className="overflow-hidden rounded-xl border border-line bg-surface">
-            <div className="flex items-center gap-1.5 border-b border-line px-3 py-2" dir="ltr">
-              <span className="size-2 rounded-full bg-line" />
-              <span className="size-2 rounded-full bg-line" />
-              <span className="size-2 rounded-full bg-line" />
-              <span className="ms-2 truncate font-mono text-[0.625rem] text-ink-3">{project.hrefLabel}</span>
+        <div className="relative rounded-2xl bg-surface-2 p-3 sm:p-5">
+          <BrowserShot shot={desktop} url={project.hrefLabel} priority={priority} sizes="(min-width: 768px) 60vw, 100vw" />
+          {phones[0] && (
+            <div className="absolute -bottom-6 inset-e-2 hidden w-[17%] sm:block">
+              <PhoneShot shot={phones[0]} />
             </div>
-            <Image
-              src={shot}
-              alt={`${labels.screenshot}: ${project.name}`}
-              width={1440}
-              height={900}
-              priority={priority}
-              sizes="(min-width: 768px) 60vw, 100vw"
-              className="aspect-16/10 h-auto w-full object-cover object-top"
-            />
-          </div>
+          )}
+        </div>
+        <figcaption className="label mt-2.5 text-[0.6875rem]">
+          {labels.screenshot} · {desktop.label}
+        </figcaption>
+      </figure>
+    );
+  }
+  if (phones.length) {
+    return (
+      <figure className="m-0">
+        <div className="grid grid-cols-3 gap-3 rounded-2xl bg-surface-2 p-4 sm:p-6">
+          {phones.map((p, i) => (
+            <PhoneShot key={p.src} shot={p} priority={priority && i === 0} />
+          ))}
         </div>
         <figcaption className="label mt-2.5 text-[0.6875rem]">{labels.screenshot}</figcaption>
       </figure>
@@ -312,5 +355,35 @@ export function ProjectVisual({
       </div>
       <figcaption className="label mt-2.5 text-[0.6875rem]">{labels.schematic}</figcaption>
     </figure>
+  );
+}
+
+/** Every screenshot of a project with captions: desktop shots 2-up, phone shots in a row. */
+export function ScreenshotGallery({ project }: { project: Project }) {
+  const desktop = project.screenshots.filter((s) => !s.phone);
+  const phones = project.screenshots.filter((s) => s.phone);
+  return (
+    <div className="space-y-8">
+      {desktop.length > 0 && (
+        <div className="grid gap-6 sm:grid-cols-2">
+          {desktop.map((s) => (
+            <figure key={s.src} className="m-0">
+              <BrowserShot shot={s} url={project.hrefLabel} sizes="(min-width: 640px) 40vw, 100vw" />
+              <figcaption className="mt-2 text-sm text-ink-3">{s.label}</figcaption>
+            </figure>
+          ))}
+        </div>
+      )}
+      {phones.length > 0 && (
+        <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
+          {phones.map((s) => (
+            <figure key={s.src} className="m-0">
+              <PhoneShot shot={s} />
+              <figcaption className="mt-2 text-sm text-ink-3">{s.label}</figcaption>
+            </figure>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }

@@ -118,5 +118,7 @@ export type Dictionary = {
   };
   footer: { builtWith: string; email: string };
   notFound: { title: string; text: string; back: string };
+  /** Screenshot captions, keyed by file name without the number (e.g. "sign-in"). */
+  shotLabels: Record<string, string>;
   projects: Record<ProjectSlug, ProjectText>;
 };

@@ -87,6 +87,7 @@ export const stackItems = [
   ["TanStack Query", "Redux Toolkit", "Zustand", "Axios", "REST APIs"],
   ["React Hook Form", "Zod", "Yup"],
   ["Tailwind CSS", "shadcn/ui", "Material UI", "Framer Motion"],
+  ["Node.js", "NestJS", "Express", "MongoDB"],
   ["Firebase", "Appwrite", "Capacitor"],
   ["Git", "GitHub", "GitLab"],
 ] as const;

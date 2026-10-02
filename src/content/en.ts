@@ -121,7 +121,7 @@ export const en: Dictionary = {
         where: ["Tredro"],
       },
     ],
-    stackGroups: ["Languages", "Frameworks", "Data & state", "Forms & validation", "UI", "Platforms", "Workflow"],
+    stackGroups: ["Languages", "Frameworks", "Data & state", "Forms & validation", "UI", "Backend", "Platforms", "Workflow"],
   },
   about: {
     eyebrow: "About",
@@ -163,6 +163,15 @@ export const en: Dictionary = {
     title: "This page doesn't exist.",
     text: "The link may be old. The work is still here.",
     back: "Back to home",
+  },
+  shotLabels: {
+    "sign-in": "Sign-in screen",
+    "dashboard-sign-in": "Company dashboard, sign-in",
+    "rep-app-phone": "Rep app on Android",
+    "customer-app-phone": "Customer app on Android",
+    "dashboard-app-phone": "Company dashboard on a phone",
+    "author-sign-up": "Author sign-up",
+    "sign-in-phone": "Sign-in on a phone",
   },
   projects: {
     kadnya: {
