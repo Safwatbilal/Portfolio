@@ -179,9 +179,7 @@ export const ar: Dictionary = {
     results: "النتائج: الدقّة، والأخطاء، وعدد الأحرف، والـ WPM",
     "sign-up": "شاشة التسجيل",
     dashboard: "Dashboard صاحب المحتوى: الإيرادات، والطلاب، ونسبة التحويل، ورصيد الـ AI",
-    "website-builder": "منشئ المواقع: الـ theme الفعّال على الكمبيوتر والهاتف",
     "website-templates": "قوالب المواقع، المجانية والمدفوعة",
-    "subscription-plans": "خطط الاشتراك، شهرياً أو سنوياً",
     "roles-permissions": "إدارة الأدوار والصلاحيات (Roles & Permissions)",
   },
   projects: {
