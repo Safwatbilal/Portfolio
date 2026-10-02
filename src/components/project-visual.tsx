@@ -264,9 +264,22 @@ function Suttor() {
   );
 }
 
-const visuals = { tredro: Tredro, kadnya: Kadnya, nebu: Nebu, suttor: Suttor };
+// Turbo Type has real screenshots, so it needs no schematic.
+const visuals: Partial<Record<Project["visual"], () => ReactNode>> = { tredro: Tredro, kadnya: Kadnya, nebu: Nebu, suttor: Suttor };
 
-function BrowserShot({ shot, url, priority, sizes }: { shot: Screenshot; url: string; priority?: boolean; sizes: string }) {
+function BrowserShot({
+  shot,
+  url,
+  priority,
+  sizes,
+  crop = true,
+}: {
+  shot: Screenshot;
+  url: string;
+  priority?: boolean;
+  sizes: string;
+  crop?: boolean;
+}) {
   return (
     <div className="overflow-hidden rounded-xl border border-line bg-surface">
       <div className="flex items-center gap-1.5 border-b border-line px-3 py-2" dir="ltr">
@@ -282,7 +295,10 @@ function BrowserShot({ shot, url, priority, sizes }: { shot: Screenshot; url: st
         height={shot.height}
         priority={priority}
         sizes={sizes}
-        className="aspect-16/10 h-auto w-full object-cover object-top"
+        className={
+          // Only trim shots taller than 16:10; wider ones show in full.
+          crop && shot.height / shot.width > 10 / 16 ? "aspect-16/10 h-auto w-full object-cover object-top" : "h-auto w-full"
+        }
       />
     </div>
   );
@@ -346,6 +362,7 @@ export function ProjectVisual({
     );
   }
   const Visual = visuals[project.visual];
+  if (!Visual) return null;
   return (
     <figure className="m-0">
       <div role="img" aria-label={project.visualAlt} className="select-none rounded-2xl bg-surface-2 p-4 sm:p-6">
@@ -365,10 +382,10 @@ export function ScreenshotGallery({ project }: { project: Project }) {
   return (
     <div className="space-y-8">
       {desktop.length > 0 && (
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid items-start gap-6 sm:grid-cols-2">
           {desktop.map((s) => (
             <figure key={s.src} className="m-0">
-              <BrowserShot shot={s} url={project.hrefLabel} sizes="(min-width: 640px) 40vw, 100vw" />
+              <BrowserShot shot={s} url={project.hrefLabel} sizes="(min-width: 640px) 40vw, 100vw" crop={false} />
               <figcaption className="mt-2 text-sm text-ink-3">{s.label}</figcaption>
             </figure>
           ))}

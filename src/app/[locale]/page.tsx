@@ -135,7 +135,7 @@ export default async function Home(props: PageProps<"/[locale]">) {
                       {p.myPart}
                     </p>
                     <p className="mt-4 text-sm text-ink-3">
-                      {p.role} · {p.period} · {p.place}
+                      {[p.role, p.period, p.place].filter(Boolean).join(" · ")}
                     </p>
                     <ul className="mt-4 flex flex-wrap gap-1.5" aria-label={d.work.technologies}>
                       {p.tags.map((t) => (

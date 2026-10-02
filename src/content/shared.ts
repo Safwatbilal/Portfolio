@@ -17,7 +17,7 @@ export const profile = {
   },
 } as const;
 
-export type ProjectSlug = "kadnya" | "tredro" | "nebu" | "suttor";
+export type ProjectSlug = "kadnya" | "tredro" | "nebu" | "suttor" | "turbotype";
 
 export type ProjectBase = {
   slug: ProjectSlug;
@@ -71,6 +71,16 @@ export const projectBases: ProjectBase[] = [
     href: "https://suttor.vercel.app",
     hrefLabel: "suttor.vercel.app",
     visual: "suttor",
+  },
+  {
+    slug: "turbotype",
+    index: "05",
+    logo: "/logos/turbotype.svg",
+    tags: ["Next.js", "NestJS", "TypeScript", "Full-stack"],
+    status: "live",
+    href: "https://turbo-type-jq2u.vercel.app",
+    hrefLabel: "turbo-type-jq2u.vercel.app",
+    visual: "turbotype",
   },
 ];
 

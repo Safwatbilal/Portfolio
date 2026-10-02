@@ -48,7 +48,7 @@ export function Header({ locale, nav, name }: { locale: Locale; nav: Dictionary[
         </nav>
 
         <div className="flex items-center gap-1.5">
-          <LangLink href={otherHref} locale={other} label={nav.switchTo} className="hidden min-h-10 items-center gap-1.5 rounded-[10px] px-2.5 text-sm font-semibold text-ink-2 transition-colors hover:bg-surface-2 hover:text-ink sm:inline-flex" />
+          <LangLink href={otherHref} locale={other} label={nav.switchTo} short={other === "ar" ? "ع" : "EN"} className="inline-flex min-h-10 items-center gap-1.5 rounded-[10px] px-2 text-sm font-semibold text-ink-2 transition-colors hover:bg-surface-2 hover:text-ink sm:px-2.5" />
           <ThemeToggle label={nav.toggleTheme} />
           <a
             href={profile.cvPath}
@@ -105,7 +105,6 @@ export function Header({ locale, nav, name }: { locale: Locale; nav: Dictionary[
                 </li>
               ))}
             </ul>
-            <LangLink href={otherHref} locale={other} label={nav.switchTo} className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-[10px] border border-line px-4 font-semibold text-ink" onClick={close} />
           </nav>
         </div>
       </dialog>
@@ -117,19 +116,30 @@ function LangLink({
   href,
   locale,
   label,
+  short,
   className,
-  onClick,
 }: {
   href: string;
   locale: Locale;
   label: string;
+  // Compact label for narrow screens; the full name stays available to screen readers.
+  short?: string;
   className: string;
-  onClick?: () => void;
 }) {
+  // A plain <a> on purpose: a client-side switch re-renders <html> from the server,
+  // which drops the saved data-theme and keeps the old scroll offset in a page whose
+  // length has changed. A full load runs the theme script before paint and starts at the top.
   return (
-    <Link href={href} hrefLang={locale} lang={locale} onClick={onClick} className={className}>
+    <a href={href} hrefLang={locale} lang={locale} className={className}>
       <Icon name="languages" size={18} />
-      {label}
-    </Link>
+      {short ? (
+        <>
+          <span aria-hidden="true" className="sm:hidden">{short}</span>
+          <span className="sr-only sm:not-sr-only">{label}</span>
+        </>
+      ) : (
+        label
+      )}
+    </a>
   );
 }

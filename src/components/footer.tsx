@@ -21,16 +21,25 @@ export function Footer({ d }: { d: Dictionary }) {
             </a>
           </li>
           <li>
-            <ExternalLink href={profile.links.linkedin} newTab={d.nav.newTab} showIcon={false} className="hover:text-ink">
+            <ExternalLink
+              href={profile.links.linkedin}
+              newTab={d.nav.newTab}
+              showIcon={false}
+              className="hover:text-ink"
+            >
               LinkedIn
             </ExternalLink>
           </li>
           <li>
-            <ExternalLink href={profile.links.github} newTab={d.nav.newTab} showIcon={false} className="hover:text-ink">
+            <ExternalLink
+              href={profile.links.github}
+              newTab={d.nav.newTab}
+              showIcon={false}
+              className="hover:text-ink"
+            >
               GitHub
             </ExternalLink>
           </li>
-          <li>{d.footer.builtWith}</li>
         </ul>
       </div>
     </footer>
