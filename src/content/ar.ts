@@ -3,7 +3,7 @@ import type { Dictionary } from "./types";
 export const ar: Dictionary = {
   langName: "العربية",
   meta: {
-    title: "صفوت بلال: Frontend Developer (React, Next.js, TypeScript)",
+    title: "صفوت بلال: Frontend Developer في طريقه إلى Full-stack (React, Next.js, NestJS)",
     description:
       "Frontend Developer يبني منصات ويب متعددة الأدوار: لوحات تحكم، واشتراكات، وميزات فورية، وواجهات عربية وإنجليزية، باستخدام React وNext.js وTypeScript.",
   },
@@ -24,7 +24,7 @@ export const ar: Dictionary = {
     newTab: "(يفتح في تبويب جديد)",
   },
   hero: {
-    label: "Frontend Developer · React, Next.js & TypeScript",
+    label: "Frontend Developer · في بداية الـ Backend مع Node.js وNestJS",
     heading: "واجهات واضحة لمنتجات معقّدة.",
     lead: "أنا صفوت بلال، Frontend Developer من حلب، سوريا. منذ 2024 أعمل على الجانب الداخلي من منتجات حقيقية: لوحات تحكم لصنّاع المعرفة، ومسارات الاشتراك والدفع، وتطبيقات للمبيعات الميدانية، بالعربية والإنجليزية.",
     proof: [
@@ -118,7 +118,7 @@ export const ar: Dictionary = {
         where: ["Tredro"],
       },
     ],
-    stackGroups: ["اللغات", "Frameworks", "البيانات والـ State", "Forms والتحقق", "UI", "Backend", "المنصات", "سير العمل"],
+    stackGroups: ["اللغات", "Frameworks", "البيانات والـ State", "Forms والتحقق", "UI", "Backend (معرفة عملية)", "المنصات", "سير العمل"],
   },
   about: {
     eyebrow: "نبذة",
@@ -126,6 +126,7 @@ export const ar: Dictionary = {
     paragraphs: [
       "درست هندسة المعلوماتية في جامعة حلب وتخرّجت عام 2026. قبل أن أعمل في الـ Frontend، شاركت في البرمجة التنافسية: حللت أكثر من 1500 مسألة على Codeforces وAtCoder وCSES، وفي موسم 2022–2023 حللت في المرتبة العاشرة فردياً على مستوى حلب، وحلّ فريقي في المرتبة السادسة على مستوى حلب والثانية والعشرين على مستوى سوريا.",
       "ما زالت هذه الخلفية تشكّل طريقة عملي. المنتج الكبير في جوهره مسألة صعبة تُقسَّم إلى أجزاء صغيرة يمكن توقّع سلوكها، وهذا الجزء من عمل الـ Frontend هو أكثر ما أستمتع به.",
+      "خبرتي المهنية في الـ Frontend. وعلى جانب الـ Backend لديّ معرفة عملية بـ Node.js وNestJS، تساعدني على فهم الـ APIs التي تعتمد عليها واجهاتي، وهو الجانب الذي أعمل على تطويره الآن.",
     ],
     facts: [
       { label: "المكان", value: "حلب، سوريا (UTC+3)" },

@@ -3,7 +3,7 @@ import type { Dictionary } from "./types";
 export const en: Dictionary = {
   langName: "English",
   meta: {
-    title: "Safwat Bilal: Frontend Developer (React, Next.js, TypeScript)",
+    title: "Safwat Bilal: Frontend Developer growing into Full-stack (React, Next.js, NestJS)",
     description:
       "Frontend developer building multi-role web platforms (dashboards, subscriptions, real-time and Arabic/English interfaces) with React, Next.js and TypeScript.",
   },
@@ -24,7 +24,7 @@ export const en: Dictionary = {
     newTab: "(opens in a new tab)",
   },
   hero: {
-    label: "Frontend Developer · React, Next.js & TypeScript",
+    label: "Frontend Developer · Junior on the backend with Node.js & NestJS",
     heading: "Clear interfaces for complex products.",
     lead: "I'm Safwat Bilal, a frontend developer from Aleppo, Syria. Since 2024 I've been building the logged-in side of real products: creator dashboards, subscription and payment flows, and field-sales apps, in Arabic and English.",
     proof: [
@@ -121,7 +121,7 @@ export const en: Dictionary = {
         where: ["Tredro"],
       },
     ],
-    stackGroups: ["Languages", "Frameworks", "Data & state", "Forms & validation", "UI", "Backend", "Platforms", "Workflow"],
+    stackGroups: ["Languages", "Frameworks", "Data & state", "Forms & validation", "UI", "Backend (working knowledge)", "Platforms", "Workflow"],
   },
   about: {
     eyebrow: "About",
@@ -129,6 +129,7 @@ export const en: Dictionary = {
     paragraphs: [
       "I studied Information Engineering at the University of Aleppo and graduated in 2026. Before I worked on frontend, I did competitive programming: I've solved more than 1,500 problems on Codeforces, AtCoder and CSES, and in the 2022–2023 season I placed 10th individually in Aleppo, and my team placed 6th in Aleppo and 22nd in Syria.",
       "That background still shapes how I work. A large product is mostly a hard problem broken into small pieces that behave predictably, and that is the part of frontend work I enjoy most.",
+      "My professional experience is on the frontend. On the backend, I have working knowledge of Node.js and NestJS, which helps me understand the APIs my interfaces depend on, and it is the side I am growing next.",
     ],
     facts: [
       { label: "Based in", value: "Aleppo, Syria (UTC+3)" },
