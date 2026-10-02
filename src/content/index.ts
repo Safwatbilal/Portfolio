@@ -29,7 +29,8 @@ export type Screenshot = Project["screenshots"][number];
 /**
  * Real screenshots: any image in public/projects/<slug>/, sorted by file name
  * (01-…, 02-…), read at build time. A name ending in "-phone" is shown in a
- * phone frame. The first non-phone image is the project's main visual; when a
+ * phone frame. A sibling named "<name>.dark.<ext>" is shown instead in dark
+ * mode. The first non-phone image is the project's main visual; when a
  * folder is empty, the schematic is shown instead.
  */
 function getScreenshots(slug: ProjectSlug) {
@@ -40,12 +41,22 @@ function getScreenshots(slug: ProjectSlug) {
   } catch {
     return [];
   }
-  return files.map((file) => {
-    const stem = file.replace(/\.[^.]+$/, "");
-    const key = stem.replace(/^\d+-/, "");
-    const { width, height } = imageSize(join(dir, file));
-    return { src: `/projects/${slug}/${file}`, key, width, height, phone: /-phone$/.test(stem) };
-  });
+  return files
+    .filter((file) => !/\.dark\.[^.]+$/.test(file))
+    .map((file) => {
+      const stem = file.replace(/\.[^.]+$/, "");
+      const key = stem.replace(/^\d+-/, "");
+      const { width, height } = imageSize(join(dir, file));
+      const dark = files.find((f) => f.startsWith(`${stem}.dark.`));
+      return {
+        src: `/projects/${slug}/${file}`,
+        darkSrc: dark ? `/projects/${slug}/${dark}` : undefined,
+        key,
+        width,
+        height,
+        phone: /-phone$/.test(stem),
+      };
+    });
 }
 
 /** Reads width/height from a PNG header; other formats fall back to 16:10. */

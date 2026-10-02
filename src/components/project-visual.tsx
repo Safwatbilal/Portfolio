@@ -288,18 +288,21 @@ function BrowserShot({
         <span className="size-2 rounded-full bg-line" />
         <span className="ms-2 truncate font-mono text-[0.625rem] text-ink-3">{url}</span>
       </div>
-      <Image
-        src={shot.src}
-        alt={shot.label}
-        width={shot.width}
-        height={shot.height}
-        priority={priority}
-        sizes={sizes}
-        className={
-          // Only trim shots taller than 16:10; wider ones show in full.
-          crop && shot.height / shot.width > 10 / 16 ? "aspect-16/10 h-auto w-full object-cover object-top" : "h-auto w-full"
-        }
-      />
+      {(shot.darkSrc ? [shot.src, shot.darkSrc] : [shot.src]).map((src, i) => (
+        <Image
+          key={src}
+          src={src}
+          alt={shot.label}
+          width={shot.width}
+          height={shot.height}
+          priority={priority && i === 0}
+          sizes={sizes}
+          className={`${shot.darkSrc ? (i === 0 ? "shot-light " : "shot-dark ") : ""}${
+            // Only trim shots taller than 16:10; wider ones show in full.
+            crop && shot.height / shot.width > 10 / 16 ? "aspect-16/10 h-auto w-full object-cover object-top" : "h-auto w-full"
+          }`}
+        />
+      ))}
     </div>
   );
 }
