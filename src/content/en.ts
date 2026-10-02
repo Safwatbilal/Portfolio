@@ -5,7 +5,7 @@ export const en: Dictionary = {
   meta: {
     title: "Safwat Bilal: Frontend Developer growing into Full-stack (React, Next.js, NestJS)",
     description:
-      "Frontend developer building multi-role web platforms (dashboards, subscriptions, real-time and Arabic/English interfaces) with React, Next.js and TypeScript.",
+      "Frontend developer building multi-role web platforms (dashboards, subscriptions, real-time and Arabic/English interfaces) with React, Next.js and TypeScript, with junior backend experience in Node.js and NestJS.",
   },
   nav: {
     work: "Work",
@@ -26,7 +26,7 @@ export const en: Dictionary = {
   hero: {
     label: "Frontend Developer · Junior on the backend with Node.js & NestJS",
     heading: "Clear interfaces for complex products.",
-    lead: "I'm Safwat Bilal, a frontend developer from Aleppo, Syria. Since 2024 I've been building the logged-in side of real products: creator dashboards, subscription and payment flows, and field-sales apps, in Arabic and English.",
+    lead: "I'm Safwat Bilal, a frontend developer from Aleppo, Syria, with junior-level backend knowledge in Node.js and NestJS. Since 2024 I've been building the logged-in side of real products: creator dashboards, subscription and payment flows, and field-sales apps, in Arabic and English.",
     proof: [
       { label: "Now", text: "Frontend Developer at Kadnya, a platform for Arabic-speaking creators" },
       { label: "Co-founder", text: "Tredro, 3 live apps for wholesale distribution" },
@@ -141,7 +141,7 @@ export const en: Dictionary = {
   contact: {
     eyebrow: "Contact",
     heading: "Get in touch",
-    text: "I'm open to new frontend opportunities, remote or with teams building in Arabic and English. Email is the fastest way to reach me.",
+    text: "I'm open to new frontend or junior full-stack opportunities, remote or with teams building in Arabic and English. Email is the fastest way to reach me.",
     copy: "Copy email",
     copied: "Copied",
   },

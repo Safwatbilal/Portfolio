@@ -1,7 +1,7 @@
 import { locales } from "@/i18n/config";
 import { ogImage, ogSize } from "@/lib/og";
 
-export const alt = "Safwat Bilal, Frontend Developer: clear interfaces for complex products";
+export const alt = "Safwat Bilal, Frontend Developer with junior backend (Node.js, NestJS): clear interfaces for complex products";
 export const size = ogSize;
 export const contentType = "image/png";
 
@@ -11,7 +11,7 @@ export function generateStaticParams() {
 
 export default function Image() {
   return ogImage({
-    eyebrow: "Frontend Developer · React, Next.js & TypeScript",
+    eyebrow: "Frontend Developer · Junior Backend (Node.js, NestJS)",
     title: "Clear interfaces for complex products.",
     line: "Multi-role platforms, subscriptions and payments, Arabic & English interfaces.",
   });

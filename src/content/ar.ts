@@ -5,7 +5,7 @@ export const ar: Dictionary = {
   meta: {
     title: "صفوت بلال: Frontend Developer في طريقه إلى Full-stack (React, Next.js, NestJS)",
     description:
-      "Frontend Developer يبني منصات ويب متعددة الأدوار: لوحات تحكم، واشتراكات، وميزات فورية، وواجهات عربية وإنجليزية، باستخدام React وNext.js وTypeScript.",
+      "Frontend Developer يبني منصات ويب متعددة الأدوار: لوحات تحكم، واشتراكات، وميزات فورية، وواجهات عربية وإنجليزية، باستخدام React وNext.js وTypeScript، مع خبرة مبتدئة في الـ Backend بـ Node.js وNestJS.",
   },
   nav: {
     work: "الأعمال",
@@ -26,7 +26,7 @@ export const ar: Dictionary = {
   hero: {
     label: "Frontend Developer · في بداية الـ Backend مع Node.js وNestJS",
     heading: "واجهات واضحة لمنتجات معقّدة.",
-    lead: "أنا صفوت بلال، Frontend Developer من حلب، سوريا. منذ 2024 أعمل على الجانب الداخلي من منتجات حقيقية: لوحات تحكم لصنّاع المعرفة، ومسارات الاشتراك والدفع، وتطبيقات للمبيعات الميدانية، بالعربية والإنجليزية.",
+    lead: "أنا صفوت بلال، Frontend Developer من حلب، سوريا، ولديّ معرفة مبتدئة بالـ Backend عبر Node.js وNestJS. منذ 2024 أعمل على الجانب الداخلي من منتجات حقيقية: لوحات تحكم لصنّاع المعرفة، ومسارات الاشتراك والدفع، وتطبيقات للمبيعات الميدانية، بالعربية والإنجليزية.",
     proof: [
       { label: "حالياً", text: "Frontend Developer في Kadnya، منصة لصنّاع المعرفة العرب" },
       { label: "Co-founder", text: "Tredro: 3 تطبيقات تعمل فعلياً لتوزيع الجملة" },
@@ -138,7 +138,7 @@ export const ar: Dictionary = {
   contact: {
     eyebrow: "تواصل",
     heading: "لنتواصل",
-    text: "أنا منفتح على فرص Frontend جديدة، عن بُعد أو مع فرق تبني منتجات بالعربية والإنجليزية. البريد الإلكتروني أسرع طريقة للتواصل معي.",
+    text: "أنا منفتح على فرص Frontend أو Junior Full-stack جديدة، عن بُعد أو مع فرق تبني منتجات بالعربية والإنجليزية. البريد الإلكتروني أسرع طريقة للتواصل معي.",
     copy: "نسخ البريد",
     copied: "تم النسخ",
   },
