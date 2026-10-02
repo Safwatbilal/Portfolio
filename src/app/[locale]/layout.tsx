@@ -74,6 +74,8 @@ export default async function RootLayout(props: LayoutProps<"/[locale]">) {
       lang={locale}
       dir={dir(locale)}
       suppressHydrationWarning
+      // Lets Next turn smooth scrolling off while it restores position on navigation.
+      data-scroll-behavior="smooth"
       className={`${plex.variable} ${plexArabic.variable} ${plexMono.variable} antialiased`}
     >
       <head>

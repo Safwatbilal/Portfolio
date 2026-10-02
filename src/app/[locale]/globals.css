@@ -79,8 +79,15 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  /* Clears the sticky header: two rows (bar + section tabs) on mobile, one from md up. */
+  scroll-padding-top: 7.25rem;
   -webkit-text-size-adjust: 100%;
+}
+
+@media (width >= 48rem) {
+  html {
+    scroll-padding-top: 5rem;
+  }
 }
 
 body {
