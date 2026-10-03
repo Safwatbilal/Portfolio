@@ -26,11 +26,11 @@ export const en: Dictionary = {
   hero: {
     label: "Software Engineer (Mid-Level Frontend · Junior Backend) · Class of 2026",
     heading: "Clear interfaces for complex products.",
-    lead: "I'm Safwat Bilal, a software engineer from Aleppo, Syria. I graduated this year (2026) in Information Engineering, majoring in Software Engineering. I work as a mid-level frontend developer with a strong problem-solving background (1,500+ algorithmic problems solved), and junior-level backend knowledge in Node.js and NestJS. Since 2023 I've been building the logged-in side of real products: creator dashboards, subscription and payment flows, and field-sales apps.",
+    lead: "I'm Safwat Bilal, a software engineer from Aleppo, Syria. I graduated this year (2026) in Information Engineering, majoring in Software Engineering. I work as a mid-level frontend developer with a strong problem-solving background (Codeforces Specialist, 1,500+ algorithmic problems solved), and junior-level backend knowledge in Node.js and NestJS. Since 2023 I've been building the logged-in side of real products: creator dashboards, subscription and payment flows, and field-sales apps.",
     proof: [
       { label: "Now", text: "Frontend Developer at Kadnya, a platform for Arabic-speaking creators" },
       { label: "Founding team", text: "Tredro, a startup built with the wholesale market, now in talks with merchants" },
-      { label: "Problem solving", text: "1,500+ algorithmic problems solved, 10th in Aleppo (ACPC 2022–2023)" },
+      { label: "Problem solving", text: "Codeforces Specialist, 1,500+ problems solved, 10th in Aleppo (ACPC 2022–2023)" },
       { label: "Backend", text: "Junior with Node.js & NestJS, growing toward full-stack" },
     ],
     ctaWork: "See selected work",
@@ -128,7 +128,7 @@ export const en: Dictionary = {
     eyebrow: "About",
     title: "Background",
     paragraphs: [
-      "I studied Information Engineering at the University of Aleppo, majoring in Software Engineering, and graduated in 2026. Before I worked on frontend, I did competitive programming: I've solved more than 1,500 problems on Codeforces, AtCoder and CSES, and in the 2022–2023 season I placed 10th individually in Aleppo, and my team placed 6th in Aleppo and 22nd in Syria.",
+      "I studied Information Engineering at the University of Aleppo, majoring in Software Engineering, and graduated in 2026. Before I worked on frontend, I did competitive programming: I reached Specialist on Codeforces and solved more than 1,500 problems on Codeforces, AtCoder and CSES, and in the 2022–2023 season I placed 10th individually in Aleppo, and my team placed 6th in Aleppo and 22nd in Syria.",
       "That background still shapes how I work. A large product is mostly a hard problem broken into small pieces that behave predictably, and that is the part of frontend work I enjoy most.",
       "My professional experience is on the frontend. On the backend, I'm at a junior level with Node.js and NestJS (I wrote the NestJS backend of Turbo Type, a personal project), which helps me understand the APIs my interfaces depend on, and it is the side I am growing next.",
     ],
