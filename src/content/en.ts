@@ -3,9 +3,9 @@ import type { Dictionary } from "./types";
 export const en: Dictionary = {
   langName: "English",
   meta: {
-    title: "Safwat Bilal: Frontend Developer growing into Full-stack (React, Next.js, NestJS)",
+    title: "Safwat Bilal: Mid-Level Frontend Developer growing into Full-stack (React, Next.js, NestJS)",
     description:
-      "Frontend developer building multi-role web platforms (dashboards, subscriptions, real-time and Arabic/English interfaces) with React, Next.js and TypeScript, with junior backend experience in Node.js and NestJS.",
+      "Mid-level frontend developer building multi-role web platforms (dashboards, subscriptions and real-time features) with React, Next.js and TypeScript, with junior backend experience in Node.js and NestJS, micro-frontends, and third-party integrations (payment gateways, Zoom, SDKs).",
   },
   nav: {
     work: "Work",
@@ -24,9 +24,9 @@ export const en: Dictionary = {
     newTab: "(opens in a new tab)",
   },
   hero: {
-    label: "Frontend Developer · Junior on the backend with Node.js & NestJS",
+    label: "Mid-Level Frontend Developer · Junior on the backend with Node.js & NestJS",
     heading: "Clear interfaces for complex products.",
-    lead: "I'm Safwat Bilal, a frontend developer from Aleppo, Syria, with junior-level backend knowledge in Node.js and NestJS. Since 2023 I've been building the logged-in side of real products: creator dashboards, subscription and payment flows, and field-sales apps, in Arabic and English.",
+    lead: "I'm Safwat Bilal, a mid-level frontend developer from Aleppo, Syria, with junior-level backend knowledge in Node.js and NestJS. Since 2023 I've been building the logged-in side of real products: creator dashboards, subscription and payment flows, and field-sales apps.",
     proof: [
       { label: "Now", text: "Frontend Developer at Kadnya, a platform for Arabic-speaking creators" },
       { label: "Founding team", text: "Tredro, a startup built with the wholesale market, now in talks with merchants" },
@@ -46,7 +46,7 @@ export const en: Dictionary = {
     screenshot: "Screenshot",
     alsoBuilt: "Also built",
     alsoBuiltText:
-      "an Arabic RTL admin panel for a property-rental platform (listings, ads, requests, complaints) with Firebase real-time chat and notifications.",
+      "an admin panel for a property-rental platform (listings, ads, requests, complaints) with Firebase real-time chat and notifications.",
     alsoBuiltAlt:
       "Belawaseet admin panel in Arabic, showing the ads management table with search and category filter",
     technologies: "Technologies",
@@ -106,9 +106,9 @@ export const en: Dictionary = {
         where: ["Kadnya", "Tredro", "Nebu"],
       },
       {
-        title: "Arabic & English, RTL included",
-        text: "Interfaces that work in both directions: locale routing with next-intl and i18next, mirrored layouts, Arabic-first UIs.",
-        where: ["Kadnya", "Tredro", "Suttor", "Belawaseet"],
+        title: "Micro-frontends & integrations",
+        text: "Features built and shipped as separate micro-frontends, connected to third-party services: payment gateways, Zoom and SDKs.",
+        where: ["Kadnya"],
       },
       {
         title: "Payments, real-time and offline",
@@ -121,7 +121,7 @@ export const en: Dictionary = {
         where: ["Tredro"],
       },
     ],
-    stackGroups: ["Languages", "Frameworks", "Data & state", "Forms & validation", "UI", "Backend (working knowledge)", "Platforms", "Workflow"],
+    stackGroups: ["Languages", "Frameworks", "Data & state", "Forms & validation", "UI", "Backend (junior)", "Architecture & integrations", "Platforms", "Workflow"],
   },
   about: {
     eyebrow: "About",
@@ -129,7 +129,7 @@ export const en: Dictionary = {
     paragraphs: [
       "I studied Information Engineering at the University of Aleppo and graduated in 2026. Before I worked on frontend, I did competitive programming: I've solved more than 1,500 problems on Codeforces, AtCoder and CSES, and in the 2022–2023 season I placed 10th individually in Aleppo, and my team placed 6th in Aleppo and 22nd in Syria.",
       "That background still shapes how I work. A large product is mostly a hard problem broken into small pieces that behave predictably, and that is the part of frontend work I enjoy most.",
-      "My professional experience is on the frontend. On the backend, I have working knowledge of Node.js and NestJS (I wrote the NestJS backend of Turbo Type, a personal project), which helps me understand the APIs my interfaces depend on, and it is the side I am growing next.",
+      "My professional experience is on the frontend. On the backend, I'm at a junior level with Node.js and NestJS (I wrote the NestJS backend of Turbo Type, a personal project), which helps me understand the APIs my interfaces depend on, and it is the side I am growing next.",
     ],
     facts: [
       { label: "Based in", value: "Aleppo, Syria (UTC+3)" },
@@ -141,7 +141,7 @@ export const en: Dictionary = {
   contact: {
     eyebrow: "Contact",
     heading: "Get in touch",
-    text: "I'm open to new frontend or junior full-stack opportunities, remote or with teams building in Arabic and English. Email is the fastest way to reach me.",
+    text: "I'm open to new mid-level frontend or junior full-stack opportunities, including remote roles. Email is the fastest way to reach me.",
     copy: "Copy email",
     copied: "Copied",
   },
@@ -231,7 +231,6 @@ export const en: Dictionary = {
           "One product, three audiences. Admin, instructor and student views share data but not permissions, so access rules have to stay consistent everywhere they apply.",
           "The platform is split into micro-frontends, so features are built and shipped as separate frontend pieces that come together as one product.",
           "The builder turns each creator's settings into their public site, so the same components have to look right under many different brands.",
-          "Arabic-first interface, right-to-left.",
         ],
         outcome: "Live at kadnya.com.",
       },
@@ -293,7 +292,6 @@ export const en: Dictionary = {
         notes: [
           "Three different users with three different devices and situations: an office dashboard, a phone used on the road with a weak signal, and a shop owner placing an order.",
           "The rep app is designed for field conditions: GPS check-in to verify visits, and offline-first behavior for routes and invoices.",
-          "Arabic-first, right-to-left interfaces across all three apps.",
         ],
         outcome: "Live on the web, and distributed as three Android apps from tredro.online.",
       },
@@ -363,7 +361,7 @@ export const en: Dictionary = {
           { title: "Management dashboard", text: "Statistics, users, writers, books, categories, articles and notifications." },
           { title: "Authors directory", text: "Browse authors, search by name, and view registered and unregistered authors separately." },
           { title: "Articles", text: "The latest articles, with filters by category and by author." },
-          { title: "Arabic-first design", text: "Right-to-left throughout, with a light/dark theme switch." },
+          { title: "Light and dark themes", text: "A light/dark theme switch across the whole platform." },
         ],
         notes: [],
         outcome: "Completed as my graduation project at the University of Aleppo (2026). Live at suttor.vercel.app.",
