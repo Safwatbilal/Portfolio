@@ -29,7 +29,7 @@ export const en: Dictionary = {
     lead: "I'm Safwat Bilal, a frontend developer from Aleppo, Syria, with junior-level backend knowledge in Node.js and NestJS. Since 2023 I've been building the logged-in side of real products: creator dashboards, subscription and payment flows, and field-sales apps, in Arabic and English.",
     proof: [
       { label: "Now", text: "Frontend Developer at Kadnya, a platform for Arabic-speaking creators" },
-      { label: "Co-founder", text: "Tredro, a startup built with the wholesale market, now in talks with merchants" },
+      { label: "Founding team", text: "Tredro, a startup built with the wholesale market, now in talks with merchants" },
       { label: "Backend", text: "Junior with Node.js & NestJS, growing toward full-stack" },
     ],
     ctaWork: "See selected work",
@@ -68,7 +68,7 @@ export const en: Dictionary = {
       },
       {
         period: "2026 – Present",
-        role: "Co-founder",
+        role: "Frontend Developer (founding team)",
         company: "Tredro",
         place: "Syria",
         summary:
@@ -172,6 +172,15 @@ export const en: Dictionary = {
     "ai-assistant": "Suttor AI, the reading assistant",
     "author-quiz": "Author verification quiz",
     "dashboard-sign-in": "Company dashboard, sign-in",
+    "company-dashboard": "Company dashboard: reps, customers, orders, sales and top products",
+    orders: "Customer orders, filtered by customer, rep and status",
+    "rep-requests": "Rep stock requests, from approval to pickup",
+    invoices: "Invoices overview: sales, collections and overdue debts",
+    customers: "Customers with their assigned reps and visit days",
+    reps: "Sales reps with referral codes",
+    products: "Product catalog",
+    notifications: "Notifications from reps and customers",
+    "users-roles": "Users and their roles",
     "rep-app-phone": "Rep app on Android",
     "customer-app-phone": "Customer app on Android",
     "dashboard-app-phone": "Company dashboard on a phone",
@@ -231,17 +240,17 @@ export const en: Dictionary = {
       name: "Tredro",
       oneLiner:
         "Connects distribution companies, their field sales reps and supermarkets in one workflow, through three apps.",
-      myPart: "Co-founder. Built all three apps and shipped them to the web and Android.",
-      role: "Co-founder",
+      myPart: "Frontend developer on the founding team. Built all three apps and shipped them to the web and Android.",
+      role: "Frontend Developer · founding team",
       period: "2026 – present",
       place: "Syria",
       visualAlt:
         "Schematic: Tredro's company dashboard, sales-rep app and customer app connected in one order workflow",
       caseStudy: {
         summary:
-          "I co-founded Tredro and built its three apps, which connect distribution companies, field sales reps and supermarkets in one workflow.",
+          "I'm on Tredro's founding team and built its three apps, which connect distribution companies, field sales reps and supermarkets in one workflow.",
         meta: [
-          { label: "Role", value: "Co-founder, frontend for all three apps" },
+          { label: "Role", value: "Frontend Developer on the founding team, all three apps" },
           { label: "Period", value: "2026 – present" },
           { label: "Market", value: "Wholesale distribution, Syria" },
           { label: "Platforms", value: "Web + Android (Capacitor)" },
@@ -274,7 +283,7 @@ export const en: Dictionary = {
         },
         builtHeading: "What I did",
         built: [
-          { title: "Co-founded the product", text: "Shaped what Tredro should be from conversations with the people who would use it." },
+          { title: "Helped shape the product", text: "Shaped what Tredro should be from conversations with the people who would use it." },
           { title: "Built all three frontends", text: "The company dashboard, the rep app and the customer app." },
           {
             title: "Shipped to web and Android with Capacitor",
