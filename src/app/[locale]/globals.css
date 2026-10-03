@@ -209,25 +209,6 @@ body {
   }
 }
 
-/* Screenshots that come in a light and a dark version */
-.shot-dark {
-  display: none;
-}
-:root[data-theme="dark"] .shot-dark {
-  display: block;
-}
-:root[data-theme="dark"] .shot-light {
-  display: none;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .shot-dark {
-    display: block;
-  }
-  :root:not([data-theme="light"]) .shot-light {
-    display: none;
-  }
-}
-
 /* Theme toggle: show the icon for the theme you'd switch TO */
 .theme-icon-sun {
   display: none;
