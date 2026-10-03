@@ -228,6 +228,25 @@ body {
   }
 }
 
+/* Screenshots with a dark variant: show only the one matching the theme */
+.shot-dark {
+  display: none;
+}
+:root[data-theme="dark"] .shot-light {
+  display: none;
+}
+:root[data-theme="dark"] .shot-dark {
+  display: block;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .shot-light {
+    display: none;
+  }
+  :root:not([data-theme="light"]) .shot-dark {
+    display: block;
+  }
+}
+
 /* Logo motion: the two modules assemble once on load, then nudge on hover */
 .mark-a,
 .mark-b {
