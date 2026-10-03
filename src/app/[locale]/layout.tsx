@@ -35,7 +35,7 @@ export async function generateMetadata(props: LayoutProps<"/[locale]">): Promise
     applicationName: profile.name,
     authors: [{ name: profile.name, url: siteUrl }],
     creator: profile.name,
-    keywords: ["Mid-Level Frontend Developer", "Frontend Developer", "Junior Backend Developer", "React Developer", "Next.js Developer", "TypeScript", "NestJS", "Node.js", "Junior Full-stack Developer", "Micro-frontends", "Third-party integrations", "Syria", "Safwat Bilal", "صفوت بلال", "مطور واجهات أمامية"],
+    keywords: ["Software Engineer", "Information Engineering graduate", "Mid-Level Frontend Developer", "Frontend Developer", "Junior Backend Developer", "React Developer", "Next.js Developer", "TypeScript", "NestJS", "Node.js", "Junior Full-stack Developer", "Micro-frontends", "Third-party integrations", "Syria", "Safwat Bilal", "صفوت بلال", "مطور واجهات أمامية"],
     alternates: {
       canonical: `/${locale}`,
       languages: { en: "/en", ar: "/ar", "x-default": "/en" },

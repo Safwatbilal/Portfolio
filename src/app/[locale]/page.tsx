@@ -30,14 +30,15 @@ export default async function Home(props: PageProps<"/[locale]">) {
     "@type": "Person",
     name: profile.name,
     alternateName: profile.nameAr,
-    jobTitle: "Mid-Level Frontend Developer (Junior Backend: Node.js, NestJS)",
+    jobTitle: "Software Engineer (Mid-Level Frontend · Junior Backend)",
     url: `${siteUrl}/${locale}`,
     email: `mailto:${profile.email}`,
     address: { "@type": "PostalAddress", addressLocality: "Aleppo", addressCountry: "SY" },
     worksFor: { "@type": "Organization", name: "Kadnya", url: "https://kadnya.com" },
     alumniOf: { "@type": "CollegeOrUniversity", name: "University of Aleppo" },
+    hasCredential: { "@type": "EducationalOccupationalCredential", credentialCategory: "degree", name: "B.Sc. Information Engineering (Software Engineering), 2026" },
     knowsLanguage: ["ar", "en"],
-    knowsAbout: ["React", "Next.js", "TypeScript", "Frontend development", "Node.js", "NestJS", "Backend development", "Micro-frontends", "Payment gateway integration", "Zoom integration", "Third-party SDKs"],
+    knowsAbout: ["Software engineering", "React", "Next.js", "TypeScript", "Frontend development", "Node.js", "NestJS", "Backend development", "Micro-frontends", "Payment gateway integration", "Zoom integration", "Third-party SDKs"],
     sameAs: Object.values(profile.links),
   };
 
@@ -65,7 +66,7 @@ export default async function Home(props: PageProps<"/[locale]">) {
             </a>
           </div>
 
-          <dl className="rise mt-14 grid gap-6 border-t border-line pt-8 sm:grid-cols-3 sm:gap-8 [animation-delay:240ms]">
+          <dl className="rise mt-14 grid gap-6 border-t border-line pt-8 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4 [animation-delay:240ms]">
             {d.hero.proof.map((item) => (
               <div key={item.label}>
                 <dt className="label mb-1.5">{item.label}</dt>

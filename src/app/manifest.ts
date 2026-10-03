@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Safwat Bilal: Mid-Level Frontend Developer · Junior Backend (NestJS)",
+    name: "Safwat Bilal: Software Engineer (Mid-Level Frontend · Junior Backend)",
     short_name: "Safwat Bilal",
     start_url: "/",
     display: "browser",
