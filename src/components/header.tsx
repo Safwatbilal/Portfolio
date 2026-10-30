@@ -2,132 +2,118 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Dictionary } from "@/content/types";
-import { profile } from "@/content/shared";
 import { swapLocale, type Locale } from "@/i18n/config";
 import { Icon } from "./icons";
-import { Wordmark } from "./logo";
-import { ThemeToggle } from "./theme-toggle";
 
-const sections = ["experience", "work", "about", "contact"] as const;
-type Section = (typeof sections)[number];
+type Key = "home" | "about" | "experience" | "expertise" | "work" | "contact";
 
 export function Header({ locale, nav, name }: { locale: Locale; nav: Dictionary["nav"]; name: string }) {
   const pathname = usePathname();
-  const isHome = pathname === `/${locale}`;
-  const active = useActiveSection(isHome);
   const other: Locale = locale === "en" ? "ar" : "en";
-  // Carry the section in view across the switch, so the reader lands where they were.
-  const otherHref = swapLocale(pathname, other) + (isHome && active ? `#${active}` : "");
+  const [open, setOpen] = useState(false);
+  const menuBtn = useRef<HTMLButtonElement>(null);
 
-  const items = sections.map((id) => ({ id, href: `/${locale}#${id}`, label: nav[id] }));
+  const base = `/${locale}`;
+  const label: Record<Key, string> = {
+    home: nav.homeShort,
+    about: nav.about,
+    experience: nav.experience,
+    expertise: nav.expertise,
+    work: nav.work,
+    contact: nav.contact,
+  };
+  const href = (k: Key) => (k === "home" ? base : `${base}/${k}`);
+  const isActive = (k: Key) => (k === "home" ? pathname === base : pathname.startsWith(href(k)));
+  const main: Key[] = ["home", "about", "experience", "expertise", "work"];
 
-  // After a language switch the page reflows (other script, other line lengths), so Next's
-  // own hash scroll can land a section off. Jump to the carried section once the new page is in.
+  // Close the drawer on Escape (links close it on click), and when the layout grows past the breakpoint.
   useEffect(() => {
-    const el = location.hash && document.getElementById(location.hash.slice(1));
-    if (el) el.scrollIntoView({ behavior: "instant", block: "start" });
-  }, [locale]);
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        menuBtn.current?.focus();
+      }
+    };
+    const onResize = () => innerWidth > 1180 && setOpen(false);
+    document.body.style.overflow = "hidden";
+    addEventListener("keydown", onKey);
+    addEventListener("resize", onResize);
+    return () => {
+      document.body.style.overflow = "";
+      removeEventListener("keydown", onKey);
+      removeEventListener("resize", onResize);
+    };
+  }, [open]);
+
+  const lang = (extra = "") => (
+    <Link href={swapLocale(pathname, other)} hrefLang={other} lang={other} className={`lang-switch ${extra}`}>
+      {nav.switchTo}
+    </Link>
+  );
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line/70 bg-bg/85 backdrop-blur-md">
-      <div className="container-page flex h-14 items-center justify-between gap-3 md:h-16 md:gap-4">
-        <Link href={`/${locale}`} aria-label={nav.home} className="shrink-0 rounded-md whitespace-nowrap">
-          <Wordmark name={name} animated />
-        </Link>
+    <>
+      <header className="top" id="top">
+        <div className="top-in">
+          <Link href={base} className="brand" aria-label={nav.home}>
+            <span className="brand-name">{name}</span>
+            <span className="brand-tag">{locale === "ar" ? "مهندس برمجيات" : "Software engineer"}</span>
+          </Link>
+          <nav className="nav" aria-label={nav.menu}>
+            {main.map((k) => (
+              <Link key={k} href={href(k)} aria-current={isActive(k) ? "page" : undefined}>
+                <span>{label[k]}</span>
+              </Link>
+            ))}
+          </nav>
+          {lang()}
+          <Link
+            className="btn btn-red top-cta"
+            href={href("contact")}
+            aria-current={isActive("contact") ? "page" : undefined}
+          >
+            {label.contact} <Icon name="arrowUpRight" className="ico go" />
+          </Link>
+          <button
+            ref={menuBtn}
+            className="menu-btn"
+            type="button"
+            aria-expanded={open}
+            aria-controls="menu"
+            aria-label={nav.openMenu}
+            onClick={() => setOpen(true)}
+          >
+            <Icon name="menu" className="ico" />
+          </button>
+        </div>
+      </header>
 
-        <nav aria-label={nav.menu} className="hidden md:block">
-          <ul className="flex items-center gap-1">
-            {items.map((item) => (
-              <li key={item.id}>
-                <Link
-                  href={item.href}
-                  aria-current={isHome && active === item.id ? "location" : undefined}
-                  className="rounded-md px-3 py-2 text-[0.9375rem] font-medium text-ink-2 transition-colors hover:text-ink aria-[current]:text-ink"
-                >
-                  {item.label}
+      {/* Mobile menu: a paper panel dropped onto the board */}
+      <div className={`menu${open ? " is-open" : ""}`} id="menu" role="dialog" aria-modal="true" aria-label={nav.menu} hidden={!open}>
+        <div className="menu-scrim" onClick={() => setOpen(false)} />
+        <div className="menu-panel">
+          <div className="menu-head">
+            <span className="brand-name">{name}</span>
+            <button className="menu-close" type="button" aria-label={nav.closeMenu} onClick={() => setOpen(false)}>
+              <Icon name="x" className="ico" />
+            </button>
+          </div>
+          <ul className="menu-links">
+            {([...main, "contact"] as Key[]).map((k) => (
+              <li key={k}>
+                <Link href={href(k)} aria-current={isActive(k) ? "page" : undefined} onClick={() => setOpen(false)}>
+                  <span>{label[k]}</span>
+                  <Icon name="arrowRight" className="ico" />
                 </Link>
               </li>
             ))}
           </ul>
-        </nav>
-
-        <div className="flex items-center gap-1">
-          <Link
-            href={otherHref}
-            hrefLang={other}
-            lang={other}
-            scroll={!(isHome && active)}
-            className="inline-flex min-h-10 items-center gap-1.5 rounded-[10px] px-2 text-sm font-semibold text-ink-2 transition-colors hover:bg-surface-2 hover:text-ink sm:px-2.5"
-          >
-            <Icon name="languages" size={18} />
-            <span aria-hidden="true" className="sm:hidden">{other === "ar" ? "ع" : "EN"}</span>
-            <span className="sr-only sm:not-sr-only">{nav.switchTo}</span>
-          </Link>
-          <ThemeToggle label={nav.toggleTheme} />
-          <a
-            href={profile.cvPath}
-            download
-            className="inline-flex min-h-10 items-center gap-1.5 rounded-[10px] border border-line px-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 sm:px-3"
-          >
-            <span className="hidden sm:inline">{nav.cv}</span>
-            <span className="sm:hidden">CV</span>
-            <Icon name="download" size={16} />
-            <span className="sr-only">{nav.cvNote}</span>
-          </a>
+          <div className="menu-foot">{lang("lang-switch-menu")}</div>
         </div>
       </div>
-
-      {/* Mobile: the four sections as a tab row instead of a hidden menu. */}
-      <nav aria-label={nav.menu} className="border-t border-line/60 md:hidden">
-        <ul className="container-page grid grid-cols-4">
-          {items.map((item) => (
-            <li key={item.id}>
-              <Link
-                href={item.href}
-                aria-current={isHome && active === item.id ? "location" : undefined}
-                className="relative flex h-11 items-center justify-center text-sm font-medium text-ink-2 transition-colors hover:text-ink aria-[current]:text-ink aria-[current]:after:absolute aria-[current]:after:inset-x-3 aria-[current]:after:bottom-0 aria-[current]:after:h-0.5 aria-[current]:after:rounded-full aria-[current]:after:bg-accent"
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </header>
+    </>
   );
-}
-
-/** The section whose heading was last scrolled past the header, or null above the first one. */
-function useActiveSection(enabled: boolean) {
-  const [active, setActive] = useState<Section | null>(null);
-
-  useEffect(() => {
-    if (!enabled) return setActive(null);
-    let frame = 0;
-    const update = () => {
-      frame = 0;
-      const line = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) + 8 || 120;
-      let current: Section | null = null;
-      for (const id of sections) {
-        const el = document.getElementById(id);
-        if (el && el.getBoundingClientRect().top <= line) current = id;
-      }
-      setActive(current);
-    };
-    const onScroll = () => {
-      if (!frame) frame = requestAnimationFrame(update);
-    };
-    update();
-    addEventListener("scroll", onScroll, { passive: true });
-    addEventListener("resize", onScroll);
-    return () => {
-      cancelAnimationFrame(frame);
-      removeEventListener("scroll", onScroll);
-      removeEventListener("resize", onScroll);
-    };
-  }, [enabled]);
-
-  return active;
 }

@@ -3,9 +3,36 @@ import type { Dictionary } from "./types";
 export const en: Dictionary = {
   langName: "English",
   meta: {
-    title: "Safwat Bilal: Software Engineer (Mid-Level Frontend · Junior Backend) | React, Next.js, NestJS",
+    title: "Safwat Bilal | Software Engineer (React, Next.js, NestJS)",
     description:
-      "Software engineer and 2026 Information Engineering graduate (Software Engineering major, University of Aleppo). Mid-level frontend developer building multi-role web platforms (dashboards, subscriptions and real-time features) with React, Next.js and TypeScript, with junior backend experience in Node.js and NestJS, micro-frontends, and third-party integrations (payment gateways, Zoom, SDKs).",
+      "Safwat Bilal, software engineer from Aleppo. Frontend with React and Next.js, backend with Node.js and NestJS, and problem solving (Codeforces Specialist).",
+    pages: {
+      about: {
+        title: "About: Frontend, Backend & Problem Solving",
+        description:
+          "Safwat Bilal graduated in 2026 in Information Engineering from the University of Aleppo. Frontend, backend and problem solving (Codeforces Specialist).",
+      },
+      experience: {
+        title: "Experience: Frontend Developer",
+        description:
+          "Frontend Developer at Kadnya, founding team at Tredro, plus Nebu and Ulutech: dashboards, subscription and payment flows, and field-sales apps.",
+      },
+      expertise: {
+        title: "Skills: Frontend, Backend & Problem Solving",
+        description:
+          "React, Next.js, TypeScript, Node.js, NestJS, micro-frontends, payment and third-party integrations, and competitive problem solving.",
+      },
+      work: {
+        title: "Selected Work",
+        description:
+          "Case studies: Kadnya, Tredro, Nebu, Suttor and Turbo Type. Dashboards, subscriptions, payments, an offline sales app and a full-stack NestJS project.",
+      },
+      contact: {
+        title: "Contact",
+        description:
+          "Contact Safwat Bilal, software engineer from Aleppo, about frontend and backend roles. Email, LinkedIn and GitHub.",
+      },
+    },
   },
   nav: {
     work: "Work",
@@ -15,6 +42,17 @@ export const en: Dictionary = {
     cv: "CV",
     cvNote: "(PDF)",
     home: "Safwat Bilal, home",
+    homeShort: "Home",
+    expertise: "Expertise",
+    pageNotes: {
+      about: "a problem solver first",
+      experience: "from intern to founding team",
+      expertise: "grouped by where I used it",
+      work: "open one for the full story",
+      contact: "let's build something",
+      notFound: "this page slipped off the board",
+    },
+    tagline: "Software engineer from Aleppo. Clear interfaces for complex products.",
     openMenu: "Open menu",
     closeMenu: "Close menu",
     menu: "Menu",
@@ -24,17 +62,18 @@ export const en: Dictionary = {
     newTab: "(opens in a new tab)",
   },
   hero: {
-    label: "Software Engineer (Mid-Level Frontend · Junior Backend) · Class of 2026",
     heading: "Clear interfaces for complex products.",
-    lead: "I'm Safwat Bilal, a software engineer from Aleppo, Syria. I graduated this year (2026) in Information Engineering, majoring in Software Engineering. I work as a mid-level frontend developer with a strong problem-solving background (Codeforces Specialist, 1,500+ algorithmic problems solved), and junior-level backend knowledge in Node.js and NestJS. Since 2023 I've been building the logged-in side of real products: creator dashboards, subscription and payment flows, and field-sales apps.",
-    proof: [
-      { label: "Now", text: "Frontend Developer at Kadnya, a platform for Arabic-speaking creators" },
-      { label: "Founding team", text: "Tredro, a startup built with the wholesale market, now in talks with merchants" },
-      { label: "Problem solving", text: "Codeforces Specialist, 1,500+ problems solved, 10th in Aleppo (ACPC 2022–2023)" },
-      { label: "Backend", text: "Junior with Node.js & NestJS, growing toward full-stack" },
+    lead: "Software engineer from Aleppo. Frontend (React, Next.js), backend (Node.js, NestJS) and problem solving (Codeforces Specialist).",
+    facts: [
+      { label: "Based", value: "Aleppo, Syria" },
+      { label: "Now", value: "Kadnya" },
+      { label: "Degree", value: "Info. Eng., 2026" },
+      { label: "Stack", value: "React, Next.js, TS" },
     ],
-    ctaWork: "See selected work",
-    ctaCv: "Download CV",
+    note: "Got a product to build? Let's talk.",
+    sayHello: "say hello",
+    openFor: "open to new roles",
+    cvLabel: "my CV",
   },
   work: {
     eyebrow: "Work",
@@ -100,6 +139,8 @@ export const en: Dictionary = {
     title: "What I work on",
     intro: "Grouped by where I've actually used it.",
     usedIn: "Used in:",
+    toolsTitle: "Tools I reach for",
+    stickers: ["Multi-role dashboards", "Micro-frontends", "Payments & real-time", "Web to Android", "Backend: Node & NestJS", "Problem solving"],
     items: [
       {
         title: "Multi-role product interfaces",
@@ -121,6 +162,16 @@ export const en: Dictionary = {
         text: "Web apps packaged as Android apps with Capacitor, so one codebase runs in the browser and on a phone.",
         where: ["Tredro"],
       },
+      {
+        title: "Backend with Node.js & NestJS",
+        text: "REST APIs and server logic with Node.js and NestJS, plus Express and MongoDB. I wrote the NestJS backend of Turbo Type, and it is the side I am growing next.",
+        where: ["Turbo Type"],
+      },
+      {
+        title: "Problem solving",
+        text: "Competitive programming: Codeforces Specialist, more than 1,500 problems solved on Codeforces, AtCoder and CSES, and 10th in Aleppo (ACPC 2022–2023).",
+        where: ["Codeforces"],
+      },
     ],
     stackGroups: ["Languages", "Frameworks", "Data & state", "Forms & validation", "UI", "Backend (junior)", "Architecture & integrations", "Platforms", "Workflow"],
   },
@@ -128,7 +179,7 @@ export const en: Dictionary = {
     eyebrow: "About",
     title: "Background",
     paragraphs: [
-      "I studied Information Engineering at the University of Aleppo, majoring in Software Engineering, and graduated in 2026. Before I worked on frontend, I did competitive programming: I reached Specialist on Codeforces and solved more than 1,500 problems on Codeforces, AtCoder and CSES, and in the 2022–2023 season I placed 10th individually in Aleppo, and my team placed 6th in Aleppo and 22nd in Syria.",
+      "I graduated in 2026 in Information Engineering from the University of Aleppo, majoring in Software Engineering. Before I worked on frontend, I did competitive programming: I reached Specialist on Codeforces and solved more than 1,500 problems on Codeforces, AtCoder and CSES, and in the 2022–2023 season I placed 10th individually in Aleppo, and my team placed 6th in Aleppo and 22nd in Syria.",
       "That background still shapes how I work. A large product is mostly a hard problem broken into small pieces that behave predictably, and that is the part of frontend work I enjoy most.",
       "My professional experience is on the frontend. On the backend, I'm at a junior level with Node.js and NestJS (I wrote the NestJS backend of Turbo Type, a personal project), which helps me understand the APIs my interfaces depend on, and it is the side I am growing next.",
     ],
@@ -160,7 +211,7 @@ export const en: Dictionary = {
     email: "Email Safwat",
     titleSuffix: "case study",
   },
-  footer: { builtWith: "Built with Next.js & TypeScript", email: "Email" },
+  footer: { builtWith: "Built with Next.js & TypeScript", email: "Email", thanks: "Thanks for stopping by.", top: "Back to top", pages: "Pages", elsewhere: "Elsewhere" },
   notFound: {
     title: "This page doesn't exist.",
     text: "The link may be old. The work is still here.",

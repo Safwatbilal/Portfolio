@@ -6,8 +6,8 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: "Safwat Bilal",
     start_url: "/",
     display: "browser",
-    background_color: "#f6f8fb",
-    theme_color: "#2f6fdb",
+    background_color: "#161513",
+    theme_color: "#161513",
     icons: [{ src: "/icon.svg", sizes: "any", type: "image/svg+xml" }],
   };
 }
