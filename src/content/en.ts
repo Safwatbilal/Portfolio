@@ -245,6 +245,11 @@ export const en: Dictionary = {
     dashboard: "Creator dashboard: revenue, students, conversion and AI credits",
     "website-templates": "Website themes, free and paid",
     "roles-permissions": "Roles & permissions management",
+    hero: "Home: the 3D logo and the hero",
+    sectors: "Sectors, each with its own 3D scene",
+    "sector-technology": "Technology & Innovation sector scene",
+    global: "Global perspective, with a 3D globe",
+    contact: "Contact page",
   },
   projects: {
     kadnya: {
@@ -448,6 +453,36 @@ export const en: Dictionary = {
         ],
         notes: [],
         outcome: "Live at turbo-type-jq2u.vercel.app.",
+      },
+    },
+    az1: {
+      name: "AZ1 Holding",
+      oneLiner: "A 3D website for an international investment group, with interactive WebGL scenes that change as you scroll.",
+      myPart: "Freelance project. I built the whole site: the Next.js app and the 3D scenes.",
+      role: "Freelance project",
+      period: "3D web",
+      place: "",
+      visualAlt: "AZ1 Holding home page with the 3D logo",
+      caseStudy: {
+        summary: "A freelance project I built end to end: the website of AZ1 Holding, an international investment group, with 3D scenes made in Three.js.",
+        meta: [
+          { label: "Role", value: "Freelance, built the whole site" },
+          { label: "Stack", value: "Next.js, React Three Fiber (Three.js), Lenis" },
+        ],
+        links: [{ label: "az1-holding-3d.vercel.app", href: "https://az1-holding-3d.vercel.app" }],
+        product:
+          "AZ1 Holding is an international investment group working across mining, energy, finance, digital assets, real estate and technology. The site presents the group, its approach, its six sectors, how it works, its portfolio and its partner network, and ends with a contact and partnership inquiry page.",
+        builtHeading: "What's in it",
+        built: [
+          { title: "3D logo", text: "The group's logo as a 3D object in the hero, carried through the page as you scroll." },
+          { title: "A scene for each sector", text: "Six sectors, each with its own 3D scene, linked by animated lines." },
+          { title: "Scroll-driven story", text: "Smooth scrolling with Lenis; the 3D scenes move with the scroll position." },
+          { title: "Global perspective", text: "A 3D wireframe globe for the group's international approach." },
+          { title: "Sound", text: "An ambient sound toggle in the corner of every page." },
+          { title: "Pages", text: "Home, About, Contact with a partnership inquiry, Privacy Policy and Terms of Use." },
+        ],
+        notes: [],
+        outcome: "Live at az1-holding-3d.vercel.app.",
       },
     },
   },

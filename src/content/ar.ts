@@ -242,6 +242,11 @@ export const ar: Dictionary = {
     dashboard: "Dashboard صاحب المحتوى: الإيرادات، والطلاب، ونسبة التحويل، ورصيد الـ AI",
     "website-templates": "قوالب المواقع، المجانية والمدفوعة",
     "roles-permissions": "إدارة الأدوار والصلاحيات (Roles & Permissions)",
+    hero: "الصفحة الرئيسية: الشعار ثلاثي الأبعاد والـ Hero",
+    sectors: "القطاعات، ولكل قطاع مشهد 3D خاص به",
+    "sector-technology": "مشهد قطاع Technology & Innovation",
+    global: "قسم Global perspective مع كرة أرضية 3D",
+    contact: "صفحة التواصل",
   },
   projects: {
     kadnya: {
@@ -439,6 +444,36 @@ export const ar: Dictionary = {
         ],
         notes: [],
         outcome: "يعمل على turbo-type-jq2u.vercel.app.",
+      },
+    },
+    az1: {
+      name: "AZ1 Holding",
+      oneLiner: "موقع ثلاثي الأبعاد لمجموعة استثمار دولية، فيه مشاهد WebGL تفاعلية تتغيّر مع التمرير.",
+      myPart: "مشروع Freelance. بنيت الموقع كاملاً: تطبيق Next.js والمشاهد ثلاثية الأبعاد.",
+      role: "مشروع Freelance",
+      period: "3D web",
+      place: "",
+      visualAlt: "الصفحة الرئيسية لموقع AZ1 Holding مع الشعار ثلاثي الأبعاد",
+      caseStudy: {
+        summary: "مشروع Freelance بنيته من البداية للنهاية: موقع AZ1 Holding، وهي مجموعة استثمار دولية، مع مشاهد 3D مبنية بـ Three.js.",
+        meta: [
+          { label: "الدور", value: "Freelance، بنيت الموقع كاملاً" },
+          { label: "التقنيات", value: "Next.js, React Three Fiber (Three.js), Lenis" },
+        ],
+        links: [{ label: "az1-holding-3d.vercel.app", href: "https://az1-holding-3d.vercel.app" }],
+        product:
+          "AZ1 Holding مجموعة استثمار دولية تعمل في التعدين، والطاقة، والتمويل، والأصول الرقمية، والعقارات، والتكنولوجيا. يعرض الموقع المجموعة، وطريقة عملها، وقطاعاتها الستة، ومراحل العمل، ومحفظتها، وشبكة شركائها، وينتهي بصفحة تواصل وطلب شراكة.",
+        builtHeading: "ماذا يتضمّن",
+        built: [
+          { title: "شعار 3D", text: "شعار المجموعة كمجسّم ثلاثي الأبعاد في الـ Hero، يرافق الصفحة أثناء التمرير." },
+          { title: "مشهد لكل قطاع", text: "ستة قطاعات، لكلٍّ منها مشهد 3D خاص، تربط بينها خطوط متحرّكة." },
+          { title: "قصة تُروى بالتمرير", text: "تمرير سلس بـ Lenis، والمشاهد ثلاثية الأبعاد تتحرّك مع موضع التمرير." },
+          { title: "منظور عالمي", text: "كرة أرضية 3D بشكل wireframe تعبّر عن توجّه المجموعة الدولي." },
+          { title: "الصوت", text: "زر لتشغيل صوت خلفية هادئ في زاوية كل صفحة." },
+          { title: "الصفحات", text: "الرئيسية، ومن نحن، والتواصل مع طلب شراكة، وسياسة الخصوصية، وشروط الاستخدام." },
+        ],
+        notes: [],
+        outcome: "يعمل على az1-holding-3d.vercel.app.",
       },
     },
   },

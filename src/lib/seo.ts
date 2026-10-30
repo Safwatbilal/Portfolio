@@ -3,7 +3,7 @@ import { getDictionary } from "@/content";
 import { profile } from "@/content/shared";
 import type { Locale } from "@/i18n/config";
 
-/** Social preview: a 1200x630 screenshot of the page header and top, taken from the built site (files in public/og). */
+/** Social preview: a 1200x630 shot of the home identity block only (no header or board), taken from the running site (files in public/og). */
 export function ogImage(locale: Locale, slug?: string) {
   const alt =
     locale === "ar"

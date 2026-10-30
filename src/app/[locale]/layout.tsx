@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Reveal } from "@/components/reveal";
+import { Tilt } from "@/components/tilt";
 import { getDictionary } from "@/content";
 import { profile, siteUrl } from "@/content/shared";
 import { dir, isLocale, locales } from "@/i18n/config";
@@ -102,6 +103,7 @@ export default async function RootLayout(props: LayoutProps<"/[locale]">) {
         {props.children}
         <Footer d={d} locale={locale} />
         <Reveal />
+        <Tilt />
       </body>
     </html>
   );

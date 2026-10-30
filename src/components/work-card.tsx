@@ -10,8 +10,9 @@ import { LiveBadge, Tag } from "./ui";
 export function WorkCard({ p, d, locale }: { p: Project; d: Dictionary; locale: Locale }) {
   const shot = p.screenshots.find((s) => !s.phone) ?? p.screenshots[0];
   return (
-    <article className="wcard">
+    <article className="wcard" data-tilt3d="6">
       <span className="tape yellow" aria-hidden="true" />
+      <span className="curl" aria-hidden="true" />
       <div className="ph">
         {shot ? (
           <Image
@@ -27,6 +28,7 @@ export function WorkCard({ p, d, locale }: { p: Project; d: Dictionary; locale: 
             <Image src={p.logo} alt="" width={52} height={52} className="h-full w-full object-contain" />
           </span>
         )}
+        <span className="glare" aria-hidden="true" />
       </div>
       <div className="wcard-body">
         <div className="wcard-top">

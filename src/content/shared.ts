@@ -18,7 +18,7 @@ export const profile = {
   },
 } as const;
 
-export type ProjectSlug = "kadnya" | "tredro" | "nebu" | "suttor" | "turbotype";
+export type ProjectSlug = "kadnya" | "tredro" | "nebu" | "suttor" | "turbotype" | "az1";
 
 export type ProjectBase = {
   slug: ProjectSlug;
@@ -82,6 +82,16 @@ export const projectBases: ProjectBase[] = [
     href: "https://turbo-type-jq2u.vercel.app",
     hrefLabel: "turbo-type-jq2u.vercel.app",
     visual: "turbotype",
+  },
+  {
+    slug: "az1",
+    index: "06",
+    logo: "/logos/az1.svg",
+    tags: ["Next.js", "Three.js", "React Three Fiber", "3D"],
+    status: "live",
+    href: "https://az1-holding-3d.vercel.app",
+    hrefLabel: "az1-holding-3d.vercel.app",
+    visual: "az1",
   },
 ];
 

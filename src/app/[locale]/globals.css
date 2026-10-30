@@ -121,6 +121,7 @@
 
 /* ---------- Base ---------- */
 html {
+  overflow-x: clip;
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: 88px;
   scroll-behavior: smooth;
@@ -138,7 +139,7 @@ body {
   background-position: 0 0, 3px 5px;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 body::before {
   content: "";
@@ -846,6 +847,35 @@ main {
 .id-main {
   min-width: 0;
 }
+
+/* ---------- 3D tilt (components/tilt.tsx sets --rx/--ry/--mx/--my and .is-tilt) ---------- */
+.tilt3d {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 600ms var(--ease-out);
+}
+.tilt3d.is-tilt {
+  transition-duration: 140ms;
+}
+.tilt3d .portrait {
+  transition: transform 600ms var(--ease-out), box-shadow 400ms var(--ease-out);
+}
+.tilt3d.is-tilt .portrait {
+  box-shadow: var(--sh-card-hover);
+}
+.glare {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 30%), rgba(255, 255, 255, 0.42), transparent 58%);
+  mix-blend-mode: soft-light;
+  opacity: 0;
+  transition: opacity 400ms var(--ease-out);
+}
+.is-tilt .glare {
+  opacity: 1;
+}
 .id-main h1 {
   font-size: clamp(1.7rem, 2.9vw, 2.55rem);
   font-weight: 650;
@@ -1442,10 +1472,37 @@ main {
   inset: 0;
   z-index: 1;
 }
+/* dog-ear: the bottom inline-end corner folds over on hover */
+.wcard .curl {
+  position: absolute;
+  z-index: 2;
+  inset-inline-end: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  background: linear-gradient(to top left, var(--paper) 49%, rgba(60, 45, 20, 0.28) 50%, #e6dfcd 54%, var(--card) 100%);
+  border-top-left-radius: 3px;
+  filter: drop-shadow(-2px -2px 2px rgba(60, 45, 20, 0.14));
+  transition: width 320ms var(--ease-out), height 320ms var(--ease-out);
+}
+[dir="rtl"] .wcard .curl {
+  background: linear-gradient(to top right, var(--paper) 49%, rgba(60, 45, 20, 0.28) 50%, #e6dfcd 54%, var(--card) 100%);
+  border-top-left-radius: 0;
+  border-top-right-radius: 3px;
+  filter: drop-shadow(2px -2px 2px rgba(60, 45, 20, 0.14));
+}
 @media (hover: hover) and (pointer: fine) {
   .wcard:hover {
-    transform: rotate(0deg) translateY(-6px);
+    transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-6px);
     box-shadow: var(--sh-card-hover);
+  }
+  .wcard.is-tilt {
+    transition-duration: 140ms, 320ms;
+  }
+  .wcard:hover .curl {
+    width: 30px;
+    height: 30px;
   }
   .wcard:hover .ph img.shot {
     transform: scale(1.035);
@@ -2458,4 +2515,9 @@ main {
   clip-path: var(--clip-strip);
   padding: 18px 34px 20px 28px;
   font-size: 1.05rem;
+}
+@media (max-width: 720px) {
+  .st-6 {
+    inset: auto;
+  }
 }

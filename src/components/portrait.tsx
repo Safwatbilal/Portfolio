@@ -10,16 +10,19 @@ import { PaperClip } from "./ui";
 export function Portrait({ name, initials }: { name: string; initials: string }) {
   const hasPhoto = existsSync(join(process.cwd(), "public", "portrait-yellow.jpg"));
   return (
-    <figure className="portrait rv">
-      <PaperClip className="pclip" />
-      <span className="tape yellow" aria-hidden="true" />
-      {hasPhoto ? (
-        <Image src="/portrait-yellow.jpg" alt={name} width={809} height={1080} priority sizes="290px" />
-      ) : (
-        <div className="mono-card" aria-hidden="true">
-          <b>{initials}</b>
-        </div>
-      )}
-    </figure>
+    <div className="tilt3d" data-tilt3d="10" data-tilt3d-phone="">
+      <figure className="portrait rv">
+        <PaperClip className="pclip" />
+        <span className="tape yellow" aria-hidden="true" />
+        {hasPhoto ? (
+          <Image src="/portrait-yellow.jpg" alt={name} width={809} height={1080} priority sizes="290px" />
+        ) : (
+          <div className="mono-card" aria-hidden="true">
+            <b>{initials}</b>
+          </div>
+        )}
+        <span className="glare" aria-hidden="true" />
+      </figure>
+    </div>
   );
 }
