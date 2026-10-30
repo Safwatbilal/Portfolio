@@ -10,10 +10,15 @@ const shapes: { cls: string; icon?: IconName }[] = [
   { cls: "st-6", icon: "puzzle" },
 ];
 
-/** Skill stickers: torn strip, tag, torn scrap, triangle. */
+/** Skill stickers: frosted-glass tiles that float over soft colour blobs. */
 export function Stickers({ labels, href }: { labels: string[]; href: string }) {
   return (
     <div className="stickers rv">
+      <span className="st-glow" aria-hidden="true">
+        <i />
+        <i />
+        <i />
+      </span>
       {shapes.slice(0, labels.length).map((s, i) => (
         <Link key={labels[i]} href={href} className={`sticker ${s.cls}`}>
           <span>

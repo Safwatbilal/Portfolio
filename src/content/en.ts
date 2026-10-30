@@ -58,7 +58,7 @@ export const en: Dictionary = {
     menu: "Menu",
     skip: "Skip to content",
     toggleTheme: "Toggle dark mode",
-    switchTo: "العربية",
+    switchTo: "AR",
     newTab: "(opens in a new tab)",
   },
   hero: {

@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import type { Dictionary } from "@/content/types";
 import { swapLocale, type Locale } from "@/i18n/config";
 import { Icon } from "./icons";
+import { SoundToggle } from "./sound";
 
 type Key = "home" | "about" | "experience" | "expertise" | "work" | "contact";
 
@@ -48,9 +49,16 @@ export function Header({ locale, nav, name }: { locale: Locale; nav: Dictionary[
     };
   }, [open]);
 
-  const lang = (extra = "") => (
-    <Link href={swapLocale(pathname, other)} hrefLang={other} lang={other} className={`lang-switch ${extra}`}>
-      {nav.switchTo}
+  const otherName = other === "ar" ? "العربية" : "English";
+  const lang = (extra = "", full = false) => (
+    <Link
+      href={swapLocale(pathname, other)}
+      hrefLang={other}
+      lang={other}
+      className={`lang-switch ${extra}`}
+      title={full ? undefined : otherName}
+    >
+      {full ? otherName : nav.switchTo}
     </Link>
   );
 
@@ -69,6 +77,7 @@ export function Header({ locale, nav, name }: { locale: Locale; nav: Dictionary[
               </Link>
             ))}
           </nav>
+          <SoundToggle locale={locale} />
           {lang()}
           <Link
             className="btn btn-red top-cta"
@@ -111,7 +120,7 @@ export function Header({ locale, nav, name }: { locale: Locale; nav: Dictionary[
               </li>
             ))}
           </ul>
-          <div className="menu-foot">{lang("lang-switch-menu")}</div>
+          <div className="menu-foot">{lang("lang-switch-menu", true)}</div>
         </div>
       </div>
     </>

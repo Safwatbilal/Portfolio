@@ -58,7 +58,7 @@ export const ar: Dictionary = {
     menu: "القائمة",
     skip: "انتقل إلى المحتوى",
     toggleTheme: "تبديل الوضع الداكن",
-    switchTo: "English",
+    switchTo: "EN",
     newTab: "(يفتح في تبويب جديد)",
   },
   hero: {
