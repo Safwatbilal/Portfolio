@@ -14,13 +14,15 @@ const grotesk = Schibsted_Grotesk({ subsets: ["latin"], variable: "--font-grotes
 const gochi = Gochi_Hand({ subsets: ["latin"], weight: "400", variable: "--font-gochi", display: "swap" });
 const marker = Permanent_Marker({ subsets: ["latin"], weight: "400", variable: "--font-marker", display: "swap" });
 const plexMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["500"], variable: "--font-plex-mono", display: "swap" });
+// Arabic fonts are not preloaded: the English pages never use them, and /ar fetches them when it paints Arabic text.
 const plexArabic = IBM_Plex_Sans_Arabic({
   subsets: ["arabic"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600", "700"],
   variable: "--font-plex-ar",
   display: "swap",
+  preload: false,
 });
-const katibeh = Katibeh({ subsets: ["arabic"], weight: "400", variable: "--font-katibeh", display: "swap" });
+const katibeh = Katibeh({ subsets: ["arabic"], weight: "400", variable: "--font-katibeh", display: "swap", preload: false });
 
 export const dynamicParams = false;
 
@@ -63,8 +65,7 @@ export async function generateMetadata(props: LayoutProps<"/[locale]">): Promise
 export const viewport: Viewport = { themeColor: "#161513" };
 
 // Lets the reveal effects hide content only when JavaScript is running.
-// On the home page, the first visit of a session also gets the 8-second paper intro (see Reveal).
-const jsScript = `(function(){var d=document.documentElement;d.classList.add("js");try{if(/^.(en|ar).?$/.test(location.pathname)&&!sessionStorage.getItem("intro")&&!matchMedia("(prefers-reduced-motion: reduce)").matches){sessionStorage.setItem("intro","1");d.classList.add("intro")}}catch(e){}})()`;
+const jsScript = `document.documentElement.classList.add("js")`;
 
 export default async function RootLayout(props: LayoutProps<"/[locale]">) {
   const { locale } = await props.params;

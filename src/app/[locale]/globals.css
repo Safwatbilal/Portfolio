@@ -94,8 +94,8 @@
   /* highlighter swipe, drawn slightly uphill */
   --hl-swipe: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 40' preserveAspectRatio='none'%3E%3Cpath d='M2.5 9.5C30 7 70 6.4 110 5.2c30-.9 60-2.2 87-3.2l1.6 30.6c-29 1.6-62 2.4-96 3.4-35 1-67 2.3-99.4 2.6L2.5 9.5z' fill='%23f7e83b'/%3E%3C/svg%3E");
   --hl-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 40' preserveAspectRatio='none'%3E%3Cpath d='M1.5 7c40-2 90-3.2 196-4.6l.8 31.2C120 35.4 60 36.4 2.6 37.6L1.5 7z' fill='%23a6e06c'/%3E%3C/svg%3E");
-  /* paper grain, generated */
-  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.01875 .028125' numOctaves='3' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .36 0 0 0 0 .24 0 0 0 .38 -.08'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  /* paper grain: a pre-rendered tile, so the browser does not compute SVG noise at runtime */
+  --grain: url("/paper-grain.webp");
 
   /* legacy token names, used by components that live inside the sheet */
   --color-scheme: light;
@@ -243,8 +243,7 @@ dd {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(22, 21, 19, 0.82);
-  backdrop-filter: blur(12px) saturate(1.2);
+  background: rgba(22, 21, 19, 0.94);
   border-bottom: 1px solid var(--ground-line);
   opacity: 0;
   transition: opacity var(--d-base) var(--ease-out);
@@ -2150,66 +2149,6 @@ main {
 }
 [lang="ar"] .hl {
   line-height: 1.6;
-}
-
-/* ---------- Home intro (8s, first visit per session; class set in layout.tsx) ---------- */
-.intro .sheet[data-page="home"]::before {
-  animation: intro-drop 1.7s cubic-bezier(0.22, 0.9, 0.3, 1) backwards;
-}
-.intro .sheet[data-page="home"] > * {
-  animation: intro-fade 0.7s var(--ease-out) 1.3s backwards;
-}
-.intro .portrait {
-  animation: intro-stamp 0.8s cubic-bezier(0.3, 1.4, 0.5, 1) 2s backwards;
-}
-.intro .portrait .tape {
-  animation: intro-tape 0.4s ease-out 2.7s backwards;
-  transform-origin: left center;
-}
-.intro .id-main h1 {
-  animation: intro-write 1.3s steps(14, end) 3.2s backwards;
-}
-.intro .id-main > *:not(h1) {
-  animation: intro-fade 0.7s var(--ease-out) 4.6s backwards;
-}
-.intro .hl-draw.in {
-  transition-delay: 5.2s;
-}
-.intro .id-side .note,
-.intro .id-main + * .note {
-  animation: intro-write 1.5s steps(24, end) 5.8s backwards;
-}
-.intro .draw.in path {
-  transition-duration: 1.2s;
-  transition-delay: 7s;
-}
-@keyframes intro-drop {
-  0% { transform: translateY(-115vh) rotate(-7deg); opacity: 0; }
-  15% { opacity: 1; }
-  60% { transform: translateY(18px) rotate(calc(var(--tilt) * 2)); }
-  80% { transform: translateY(-7px) rotate(var(--tilt)); }
-  100% { transform: translateY(0) rotate(var(--tilt)); }
-}
-@keyframes intro-fade {
-  from { opacity: 0; transform: translateY(14px); }
-}
-@keyframes intro-stamp {
-  from { opacity: 0; transform: translateY(-50px) rotate(-9deg) scale(1.12); }
-}
-@keyframes intro-tape {
-  from { transform: scaleX(0); }
-}
-@keyframes intro-write {
-  from { clip-path: inset(-12% 100% -12% 0); }
-  to { clip-path: inset(-12% 0 -12% 0); }
-}
-[dir="rtl"] .intro .id-main h1,
-[dir="rtl"] .intro .id-side .note {
-  animation-name: intro-write-rtl;
-}
-@keyframes intro-write-rtl {
-  from { clip-path: inset(-12% 0 -12% 100%); }
-  to { clip-path: inset(-12% 0 -12% 0); }
 }
 
 /* ---------- Reduced motion ---------- */

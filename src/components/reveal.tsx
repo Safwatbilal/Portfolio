@@ -27,20 +27,6 @@ export function Reveal() {
     return () => io.disconnect();
   }, [pathname]);
 
-  // The intro lasts 8s; any input skips it (removing the class jumps every animation to its end state).
-  useEffect(() => {
-    const root = document.documentElement;
-    if (!root.classList.contains("intro")) return;
-    const end = () => root.classList.remove("intro");
-    const timer = setTimeout(end, 8200);
-    const events = ["wheel", "touchstart", "pointerdown", "keydown"] as const;
-    events.forEach((e) => addEventListener(e, end, { once: true, passive: true }));
-    return () => {
-      clearTimeout(timer);
-      events.forEach((e) => removeEventListener(e, end));
-    };
-  }, []);
-
   useEffect(() => {
     const top = document.getElementById("top");
     const update = () => top?.classList.toggle("is-scrolled", scrollY > 8);
