@@ -6,7 +6,8 @@ import { ProjectVisual, ScreenshotGallery } from "@/components/project-visual";
 import { ExternalLink, LiveBadge, PageHead, ProjectLogo, Sheet, Tag, TextLink } from "@/components/ui";
 import { getDictionary, getProjects } from "@/content";
 import { profile, projectBases, siteUrl } from "@/content/shared";
-import { isLocale, locales } from "@/i18n/config";
+import { isLocale, locales, type Locale } from "@/i18n/config";
+import { ogImage } from "@/lib/seo";
 
 export const dynamicParams = false;
 
@@ -33,7 +34,14 @@ export async function generateMetadata(props: PageProps<"/[locale]/work/[slug]">
       canonical: `/${locale}/work/${slug}`,
       languages: { en: `/en/work/${slug}`, ar: `/ar/work/${slug}` },
     },
-    openGraph: { type: "article", title, description: p.caseStudy.summary, url: `/${locale}/work/${slug}` },
+    openGraph: {
+      type: "article",
+      title,
+      description: p.caseStudy.summary,
+      url: `/${locale}/work/${slug}`,
+      images: [ogImage(locale as Locale, slug)],
+    },
+    twitter: { card: "summary_large_image", title, description: p.caseStudy.summary, images: [ogImage(locale as Locale, slug).url] },
   };
 }
 

@@ -5,14 +5,12 @@ import { PageHead, ProjectLogo, Sheet } from "@/components/ui";
 import { getDictionary } from "@/content";
 import { projectBases } from "@/content/shared";
 import { isLocale } from "@/i18n/config";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(props: PageProps<"/[locale]/experience">): Promise<Metadata> {
   const { locale } = await props.params;
   if (!isLocale(locale)) return {};
-  return {
-    title: getDictionary(locale).experience.title,
-    alternates: { canonical: `/${locale}/experience`, languages: { en: "/en/experience", ar: "/ar/experience" } },
-  };
+  return pageMetadata(locale, "experience");
 }
 
 export default async function Experience(props: PageProps<"/[locale]/experience">) {

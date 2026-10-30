@@ -27,7 +27,11 @@ export type ProjectText = {
 
 export type Dictionary = {
   langName: string; // name of THIS language, shown in the switcher of the other one
-  meta: { title: string; description: string };
+  meta: {
+    title: string;
+    description: string;
+    pages: Record<"about" | "experience" | "expertise" | "work" | "contact", { title: string; description: string }>;
+  };
   nav: {
     work: string;
     experience: string;

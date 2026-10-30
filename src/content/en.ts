@@ -3,9 +3,36 @@ import type { Dictionary } from "./types";
 export const en: Dictionary = {
   langName: "English",
   meta: {
-    title: "Safwat Bilal: Software Engineer (Mid-Level Frontend · Junior Backend) | React, Next.js, NestJS",
+    title: "Safwat Bilal | Software Engineer (React, Next.js, NestJS)",
     description:
-      "Software engineer and 2026 Information Engineering graduate (Software Engineering major, University of Aleppo). Mid-level frontend developer building multi-role web platforms (dashboards, subscriptions and real-time features) with React, Next.js and TypeScript, with junior backend experience in Node.js and NestJS, micro-frontends, and third-party integrations (payment gateways, Zoom, SDKs).",
+      "Safwat Bilal, software engineer from Aleppo. Frontend with React and Next.js, backend with Node.js and NestJS, and problem solving (Codeforces Specialist).",
+    pages: {
+      about: {
+        title: "About: Frontend, Backend & Problem Solving",
+        description:
+          "Safwat Bilal graduated in 2026 in Information Engineering from the University of Aleppo. Frontend, backend and problem solving (Codeforces Specialist).",
+      },
+      experience: {
+        title: "Experience: Frontend Developer",
+        description:
+          "Frontend Developer at Kadnya, founding team at Tredro, plus Nebu and Ulutech: dashboards, subscription and payment flows, and field-sales apps.",
+      },
+      expertise: {
+        title: "Skills: Frontend, Backend & Problem Solving",
+        description:
+          "React, Next.js, TypeScript, Node.js, NestJS, micro-frontends, payment and third-party integrations, and competitive problem solving.",
+      },
+      work: {
+        title: "Selected Work",
+        description:
+          "Case studies: Kadnya, Tredro, Nebu, Suttor and Turbo Type. Dashboards, subscriptions, payments, an offline sales app and a full-stack NestJS project.",
+      },
+      contact: {
+        title: "Contact",
+        description:
+          "Contact Safwat Bilal, software engineer from Aleppo, about frontend and backend roles. Email, LinkedIn and GitHub.",
+      },
+    },
   },
   nav: {
     work: "Work",
@@ -36,7 +63,7 @@ export const en: Dictionary = {
   },
   hero: {
     heading: "Clear interfaces for complex products.",
-    lead: "Software engineer from Aleppo. I build dashboards, subscription and payment flows, and field-sales apps with React and Next.js.",
+    lead: "Software engineer from Aleppo. Frontend (React, Next.js), backend (Node.js, NestJS) and problem solving (Codeforces Specialist).",
     facts: [
       { label: "Based", value: "Aleppo, Syria" },
       { label: "Now", value: "Kadnya" },

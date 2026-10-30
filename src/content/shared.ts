@@ -12,6 +12,7 @@ export const profile = {
   links: {
     linkedin: "https://www.linkedin.com/in/safwat-bilal-476006231",
     github: "https://github.com/Safwatbilal",
+    instagram: "https://www.instagram.com/safwatbilal/",
     gitlab: "https://gitlab.com/safwatbilal",
     codeforces: "https://codeforces.com/profile/Recursive-Thinker",
   },

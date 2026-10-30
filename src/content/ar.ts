@@ -3,9 +3,36 @@ import type { Dictionary } from "./types";
 export const ar: Dictionary = {
   langName: "العربية",
   meta: {
-    title: "Safwat Bilal: مهندس برمجيات (Mid-Level Frontend · Junior Backend) | React, Next.js, NestJS",
+    title: "Safwat Bilal | مهندس برمجيات (React, Next.js, NestJS)",
     description:
-      "مهندس برمجيات تخرّج عام 2026 في هندسة المعلوماتية (اختصاص هندسة البرمجيات، جامعة حلب). Mid-Level Frontend Developer يبني منصات ويب متعددة الأدوار: لوحات تحكم، واشتراكات، وميزات فورية، باستخدام React وNext.js وTypeScript، مع خبرة مبتدئة في الـ Backend بـ Node.js وNestJS، وMicro-frontends، والتكامل مع خدمات خارجية (بوابات الدفع، Zoom، SDKs).",
+      "Safwat Bilal، مهندس برمجيات من حلب. Frontend بـ React وNext.js، وBackend بـ Node.js وNestJS، وProblem Solving.",
+    pages: {
+      about: {
+        title: "نبذة: Frontend وBackend وProblem Solving",
+        description:
+          "تخرّج Safwat Bilal عام 2026 في هندسة المعلوماتية من جامعة حلب. Frontend وBackend وProblem Solving (Specialist على Codeforces).",
+      },
+      experience: {
+        title: "الخبرات: Frontend Developer",
+        description:
+          "Frontend Developer في Kadnya، والفريق المؤسس في Tredro، مع خبرة في Nebu وUlutech: لوحات تحكم، ومسارات اشتراك ودفع، وتطبيقات للمبيعات الميدانية.",
+      },
+      expertise: {
+        title: "المهارات: Frontend وBackend وProblem Solving",
+        description:
+          "React وNext.js وTypeScript وNode.js وNestJS، وMicro-frontends وتكاملات الدفع والخدمات الخارجية، وحلّ المسائل البرمجية.",
+      },
+      work: {
+        title: "أعمال مختارة",
+        description:
+          "دراسات حالة: Kadnya وTredro وNebu وSuttor وTurbo Type. لوحات تحكم واشتراكات ومدفوعات وتطبيق مبيعات يعمل دون اتصال، ومشروع Full-stack بـ NestJS.",
+      },
+      contact: {
+        title: "تواصل",
+        description:
+          "تواصل مع Safwat Bilal، مهندس برمجيات من حلب، بخصوص فرص Frontend وBackend. البريد وLinkedIn وGitHub.",
+      },
+    },
   },
   nav: {
     work: "الأعمال",
@@ -36,7 +63,7 @@ export const ar: Dictionary = {
   },
   hero: {
     heading: "واجهات واضحة لمنتجات معقّدة.",
-    lead: "مهندس برمجيات من حلب. أبني لوحات تحكم، ومسارات اشتراك ودفع، وتطبيقات للمبيعات الميدانية باستخدام React وNext.js.",
+    lead: "مهندس برمجيات من حلب. Frontend (React, Next.js)، وBackend (Node.js, NestJS)، وProblem Solving (Specialist على Codeforces).",
     facts: [
       { label: "المدينة", value: "حلب، سوريا" },
       { label: "حالياً", value: "Kadnya" },

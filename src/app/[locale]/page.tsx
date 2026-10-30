@@ -25,6 +25,8 @@ export default async function Home(props: PageProps<"/[locale]">) {
     name: profile.name,
     alternateName: profile.nameAr,
     jobTitle: "Software Engineer (Mid-Level Frontend · Junior Backend)",
+    description: d.meta.description,
+    image: `${siteUrl}/portrait-yellow.jpg`,
     url: `${siteUrl}/${locale}`,
     email: `mailto:${profile.email}`,
     address: { "@type": "PostalAddress", addressLocality: "Aleppo", addressCountry: "SY" },
@@ -83,6 +85,14 @@ export default async function Home(props: PageProps<"/[locale]">) {
                   <span dir="ltr">GitHub</span>
                 </ExternalLink>
               </li>
+              <li>
+                <ExternalLink href={profile.links.instagram} newTab={d.nav.newTab} showIcon={false}>
+                  <span className="dot">
+                    <Icon name="instagram" className="ico" />
+                  </span>
+                  <span dir="ltr">Instagram</span>
+                </ExternalLink>
+              </li>
             </ul>
             <a className="qr" href={profile.cvPath} download aria-label={`${d.nav.cv} ${d.nav.cvNote}`}>
               <Icon name="file" className="ico" />
@@ -107,9 +117,9 @@ export default async function Home(props: PageProps<"/[locale]">) {
               </a>
             </li>
             <li>
-              <ExternalLink href={profile.links.github} newTab={d.nav.newTab} showIcon={false}>
+              <ExternalLink href={profile.links.instagram} newTab={d.nav.newTab} showIcon={false}>
                 <Icon name="at" className="ico" />
-                Safwatbilal
+                safwatbilal
               </ExternalLink>
             </li>
             <li>

@@ -7,6 +7,7 @@ import { Reveal } from "@/components/reveal";
 import { getDictionary } from "@/content";
 import { profile, siteUrl } from "@/content/shared";
 import { dir, isLocale, locales } from "@/i18n/config";
+import { ogImage } from "@/lib/seo";
 import "./globals.css";
 
 const grotesk = Schibsted_Grotesk({ subsets: ["latin"], variable: "--font-grotesk", display: "swap" });
@@ -52,8 +53,9 @@ export async function generateMetadata(props: LayoutProps<"/[locale]">): Promise
       url: `/${locale}`,
       locale: locale === "ar" ? "ar_SY" : "en_US",
       alternateLocale: locale === "ar" ? "en_US" : "ar_SY",
+      images: [ogImage(locale)],
     },
-    twitter: { card: "summary_large_image", title: d.meta.title, description: d.meta.description },
+    twitter: { card: "summary_large_image", title: d.meta.title, description: d.meta.description, images: [ogImage(locale).url] },
     robots: { index: true, follow: true },
   };
 }
@@ -62,7 +64,7 @@ export const viewport: Viewport = { themeColor: "#161513" };
 
 // Lets the reveal effects hide content only when JavaScript is running.
 // On the home page, the first visit of a session also gets the 8-second paper intro (see Reveal).
-const jsScript = `(function(){var d=document.documentElement;d.classList.add("js");try{if(/^\/(en|ar)\/?$/.test(location.pathname)&&!sessionStorage.getItem("intro")&&!matchMedia("(prefers-reduced-motion: reduce)").matches){sessionStorage.setItem("intro","1");d.classList.add("intro")}}catch(e){}})()`;
+const jsScript = `(function(){var d=document.documentElement;d.classList.add("js");try{if(/^.(en|ar).?$/.test(location.pathname)&&!sessionStorage.getItem("intro")&&!matchMedia("(prefers-reduced-motion: reduce)").matches){sessionStorage.setItem("intro","1");d.classList.add("intro")}}catch(e){}})()`;
 
 export default async function RootLayout(props: LayoutProps<"/[locale]">) {
   const { locale } = await props.params;

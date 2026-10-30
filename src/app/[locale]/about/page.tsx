@@ -6,14 +6,12 @@ import { ExternalLink, PageHead, Sheet } from "@/components/ui";
 import { getDictionary } from "@/content";
 import { profile } from "@/content/shared";
 import { isLocale } from "@/i18n/config";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(props: PageProps<"/[locale]/about">): Promise<Metadata> {
   const { locale } = await props.params;
   if (!isLocale(locale)) return {};
-  return {
-    title: getDictionary(locale).nav.about,
-    alternates: { canonical: `/${locale}/about`, languages: { en: "/en/about", ar: "/ar/about" } },
-  };
+  return pageMetadata(locale, "about");
 }
 
 export default async function About(props: PageProps<"/[locale]/about">) {

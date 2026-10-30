@@ -54,6 +54,11 @@ export function Footer({ d, locale }: { d: Dictionary; locale: Locale }) {
                 </ExternalLink>
               </li>
               <li>
+                <ExternalLink href={profile.links.instagram} newTab={d.nav.newTab} showIcon={false}>
+                  Instagram
+                </ExternalLink>
+              </li>
+              <li>
                 <a href={profile.cvPath} download>
                   {d.nav.cv} <span className="sr-only">{d.nav.cvNote}</span>
                 </a>
@@ -74,6 +79,9 @@ export function Footer({ d, locale }: { d: Dictionary; locale: Locale }) {
             </ExternalLink>
             <ExternalLink href={profile.links.github} newTab={d.nav.newTab} showIcon={false} aria-label="GitHub">
               <Icon name="github" className="ico" />
+            </ExternalLink>
+            <ExternalLink href={profile.links.instagram} newTab={d.nav.newTab} showIcon={false} aria-label="Instagram">
+              <Icon name="instagram" className="ico" />
             </ExternalLink>
           </div>
           <a className="to-top" href="#top">

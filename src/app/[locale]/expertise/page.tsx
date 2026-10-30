@@ -4,16 +4,14 @@ import { StackFolders } from "@/components/stack-folders";
 import { PageHead, Sheet } from "@/components/ui";
 import { getDictionary } from "@/content";
 import { isLocale } from "@/i18n/config";
+import { pageMetadata } from "@/lib/seo";
 
 const colors = ["var(--st-orange)", "var(--st-red)", "var(--st-pink)", "var(--st-green)", "var(--st-blue)", "var(--hl)"];
 
 export async function generateMetadata(props: PageProps<"/[locale]/expertise">): Promise<Metadata> {
   const { locale } = await props.params;
   if (!isLocale(locale)) return {};
-  return {
-    title: getDictionary(locale).nav.expertise,
-    alternates: { canonical: `/${locale}/expertise`, languages: { en: "/en/expertise", ar: "/ar/expertise" } },
-  };
+  return pageMetadata(locale, "expertise");
 }
 
 export default async function Expertise(props: PageProps<"/[locale]/expertise">) {

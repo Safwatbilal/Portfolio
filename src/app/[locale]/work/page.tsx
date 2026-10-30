@@ -6,14 +6,12 @@ import { WorkCard } from "@/components/work-card";
 import { getDictionary, getProjects } from "@/content";
 import { alsoBuiltBase } from "@/content/shared";
 import { isLocale } from "@/i18n/config";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(props: PageProps<"/[locale]/work">): Promise<Metadata> {
   const { locale } = await props.params;
   if (!isLocale(locale)) return {};
-  return {
-    title: getDictionary(locale).work.title,
-    alternates: { canonical: `/${locale}/work`, languages: { en: "/en/work", ar: "/ar/work" } },
-  };
+  return pageMetadata(locale, "work");
 }
 
 export default async function Work(props: PageProps<"/[locale]/work">) {

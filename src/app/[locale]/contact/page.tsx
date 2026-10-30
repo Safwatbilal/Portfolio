@@ -6,14 +6,12 @@ import { ExternalLink, PageHead, Sheet } from "@/components/ui";
 import { getDictionary } from "@/content";
 import { profile } from "@/content/shared";
 import { isLocale } from "@/i18n/config";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(props: PageProps<"/[locale]/contact">): Promise<Metadata> {
   const { locale } = await props.params;
   if (!isLocale(locale)) return {};
-  return {
-    title: getDictionary(locale).nav.contact,
-    alternates: { canonical: `/${locale}/contact`, languages: { en: "/en/contact", ar: "/ar/contact" } },
-  };
+  return pageMetadata(locale, "contact");
 }
 
 export default async function Contact(props: PageProps<"/[locale]/contact">) {
@@ -63,6 +61,16 @@ export default async function Contact(props: PageProps<"/[locale]/contact">) {
               <b>
                 <ExternalLink href={profile.links.github} newTab={d.nav.newTab} className="link">
                   GitHub
+                </ExternalLink>
+              </b>
+            </li>
+            <li>
+              <span className="dot">
+                <Icon name="instagram" className="ico" />
+              </span>
+              <b>
+                <ExternalLink href={profile.links.instagram} newTab={d.nav.newTab} className="link">
+                  Instagram
                 </ExternalLink>
               </b>
             </li>
