@@ -3,17 +3,92 @@ import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
 import { Icon } from "./icons";
 
-const base =
-  "inline-flex items-center justify-center gap-2 rounded-[10px] min-h-11 px-4 text-[0.9375rem] font-semibold transition-[background-color,border-color,transform] duration-150 ease-brand active:scale-[0.98]";
-
+/** Button class names for plain <a>/<Link> elements. */
 export const buttonStyles = {
-  primary: `${base} bg-accent text-on-accent hover:bg-accent-hover`,
-  secondary: `${base} border border-line text-ink hover:bg-surface-2`,
+  primary: "btn btn-red",
+  secondary: "btn btn-line",
 };
 
-/** Directional arrow that points "forward" in both LTR and RTL. */
-export function ForwardArrow({ size = 18, className = "" }: { size?: number; className?: string }) {
-  return <Icon name="arrowRight" size={size} className={`rtl:-scale-x-100 ${className}`} />;
+/** Hand-drawn paper clip, shared by the sheet and the portrait card. */
+export function PaperClip({ className }: { className: string }) {
+  return (
+    <svg className={className} viewBox="0 0 34 104" aria-hidden="true">
+      <path
+        d="M11 30v52a6 6 0 0 0 12 0V17a10.5 10.5 0 0 0-21 0v70a15 15 0 0 0 30 0V34"
+        fill="none"
+        stroke="url(#steel)"
+        strokeWidth="3.2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+/** The sheet of paper every page is printed on. `tilt` varies the angle per page. */
+export function Sheet({ page, tilt, children }: { page?: string; tilt?: "b" | "c"; children: ReactNode }) {
+  return (
+    <main id="main" tabIndex={-1}>
+      <article className="sheet" data-page={page} data-tilt={tilt}>
+        <PaperClip className="clip" />
+        {children}
+      </article>
+    </main>
+  );
+}
+
+/** Breadcrumb + page title (highlighter) + lead + a red handwritten margin note. */
+export function PageHead({
+  crumbs,
+  title,
+  lead,
+  note,
+  titleId = "page-title",
+}: {
+  crumbs: { label: string; href?: string }[];
+  title: string;
+  lead?: string;
+  note?: string;
+  titleId?: string;
+}) {
+  return (
+    <>
+      <nav className="crumbs" aria-label="Breadcrumb">
+        {crumbs.map((c, i) => (
+          <span key={c.label} className="contents">
+            {i > 0 && <Icon name="chevronRight" className="ico" />}
+            {c.href ? <Link href={c.href}>{c.label}</Link> : <span aria-current="page">{c.label}</span>}
+          </span>
+        ))}
+      </nav>
+      <header className="page-head grid items-end gap-[var(--gap)] md:grid-cols-[minmax(0,1fr)_minmax(0,290px)]">
+        <div className="hero-in">
+          <h1 id={titleId} tabIndex={-1}>
+            <span className="hl">{title}</span>
+          </h1>
+          {lead && <p className="lead">{lead}</p>}
+        </div>
+        {note && <MarginNote>{note}</MarginNote>}
+      </header>
+    </>
+  );
+}
+
+/** Red handwritten note with a hand-drawn arrow that draws itself in. */
+export function MarginNote({ children }: { children: ReactNode }) {
+  return (
+    <p className="note rv">
+      {children}
+      <svg className="doodle draw mt-1.5 h-12 w-[92px]" viewBox="0 0 96 50" aria-hidden="true">
+        <path pathLength="100" d="M6 8c10 20 30 30 52 28 12-1 22-6 30-12" />
+        <path pathLength="100" d="M78 16l11 7-12 6" />
+      </svg>
+    </p>
+  );
+}
+
+/** Directional arrow that points "forward" in both LTR and RTL (flipped in CSS). */
+export function ForwardArrow({ className = "" }: { className?: string }) {
+  return <Icon name="arrowRight" className={`ico fwd ${className}`} />;
 }
 
 /** External link: opens in a new tab and says so to screen readers. */
@@ -28,7 +103,7 @@ export function ExternalLink({
   return (
     <a href={href} target="_blank" rel="noopener noreferrer" className={className} {...props}>
       {children}
-      {showIcon && <Icon name="arrowUpRight" size={16} className="shrink-0 rtl:-scale-x-100" />}
+      {showIcon && <Icon name="arrowUpRight" className="ico go" />}
       <span className="sr-only"> {newTab}</span>
     </a>
   );
@@ -36,10 +111,7 @@ export function ExternalLink({
 
 export function Tag({ children }: { children: ReactNode }) {
   return (
-    <span
-      dir="ltr"
-      className="inline-flex items-center rounded-md bg-accent-soft px-2 py-0.5 text-[0.8125rem] font-medium text-accent-ink"
-    >
+    <span dir="ltr" className="chip">
       {children}
     </span>
   );
@@ -47,11 +119,8 @@ export function Tag({ children }: { children: ReactNode }) {
 
 export function LiveBadge({ label }: { label: string }) {
   return (
-    <span className="inline-flex items-center gap-1.5 text-[0.8125rem] font-medium text-ok">
-      <span className="relative flex size-1.5" aria-hidden="true">
-        <span className="absolute inline-flex size-full animate-ping rounded-full bg-ok opacity-60 motion-reduce:hidden" />
-        <span className="relative inline-flex size-1.5 rounded-full bg-ok" />
-      </span>
+    <span className="badge">
+      <Icon name="check" className="ico" style={{ width: 13, height: 13 }} />
       {label}
     </span>
   );
@@ -60,7 +129,7 @@ export function LiveBadge({ label }: { label: string }) {
 export function ProjectLogo({ src, alt, size = 40 }: { src: string; alt: string; size?: number }) {
   return (
     <span
-      className="grid shrink-0 place-items-center rounded-xl border border-line bg-white p-1.5"
+      className="grid shrink-0 place-items-center rounded-xl bg-white p-1.5 shadow-[var(--sh-card)]"
       style={{ width: size, height: size }}
     >
       <Image src={src} alt={alt} width={size - 12} height={size - 12} className="h-full w-full object-contain" />
@@ -68,6 +137,7 @@ export function ProjectLogo({ src, alt, size = 40 }: { src: string; alt: string;
   );
 }
 
+/** Section title with a highlighter swipe that draws in on scroll. */
 export function SectionHeader({
   id,
   eyebrow,
@@ -75,26 +145,26 @@ export function SectionHeader({
   intro,
 }: {
   id: string;
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   intro?: string;
 }) {
   return (
-    <div className="mb-10 max-w-2xl md:mb-14">
-      <p className="label mb-3">{eyebrow}</p>
+    <div className="sec-head">
+      {eyebrow && <p className="mono sec-eyebrow">{eyebrow}</p>}
       <h2 id={id} className="h2">
-        {title}
+        <span className="hl hl-draw">{title}</span>
       </h2>
-      {intro && <p className="lead mt-3">{intro}</p>}
+      {intro && <p>{intro}</p>}
     </div>
   );
 }
 
 export function TextLink({ href, children }: { href: string; children: ReactNode }) {
   return (
-    <Link href={href} className="group inline-flex items-center gap-1.5 font-semibold text-accent-ink">
+    <Link href={href} className="link">
       {children}
-      <ForwardArrow className="transition-transform duration-150 ease-brand group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
+      <ForwardArrow />
     </Link>
   );
 }

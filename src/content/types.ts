@@ -36,6 +36,10 @@ export type Dictionary = {
     cv: string;
     cvNote: string;
     home: string;
+    homeShort: string;
+    expertise: string;
+    pageNotes: { about: string; experience: string; expertise: string; work: string; contact: string; notFound: string };
+    tagline: string;
     openMenu: string;
     closeMenu: string;
     menu: string;
@@ -45,12 +49,13 @@ export type Dictionary = {
     newTab: string;
   };
   hero: {
-    label: string;
     heading: string;
     lead: string;
-    proof: { label: string; text: string }[];
-    ctaWork: string;
-    ctaCv: string;
+    facts: Labeled[];
+    note: string;
+    sayHello: string;
+    openFor: string;
+    cvLabel: string;
   };
   work: {
     eyebrow: string;
@@ -85,6 +90,8 @@ export type Dictionary = {
     title: string;
     intro: string;
     usedIn: string;
+    toolsTitle: string;
+    stickers: string[]; // short labels, same order as items
     items: { title: string; text: string; where: string[] }[];
     stackGroups: string[]; // same order as stackItems in shared.ts
   };
@@ -116,7 +123,7 @@ export type Dictionary = {
     email: string;
     titleSuffix: string;
   };
-  footer: { builtWith: string; email: string };
+  footer: { builtWith: string; email: string; thanks: string; top: string; pages: string; elsewhere: string };
   notFound: { title: string; text: string; back: string };
   /** Screenshot captions, keyed by file name without the number (e.g. "sign-in"). */
   shotLabels: Record<string, string>;

@@ -15,12 +15,8 @@ export function CopyEmail({ email, label, done }: { email: string; label: string
   }
 
   return (
-    <button
-      type="button"
-      onClick={copy}
-      className="inline-flex min-h-11 items-center gap-2 rounded-[10px] border border-line px-4 text-[0.9375rem] font-semibold text-ink transition-colors hover:bg-surface-2"
-    >
-      <Icon name={copied ? "check" : "copy"} size={18} />
+    <button type="button" onClick={copy} className={`copy${copied ? " done" : ""}`}>
+      <Icon name={copied ? "check" : "copy"} className="ico" />
       <span aria-live="polite">{copied ? done : label}</span>
     </button>
   );

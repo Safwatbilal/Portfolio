@@ -3,7 +3,7 @@ import type { Dictionary } from "./types";
 export const ar: Dictionary = {
   langName: "العربية",
   meta: {
-    title: "صفوت بلال: مهندس برمجيات (Mid-Level Frontend · Junior Backend) | React, Next.js, NestJS",
+    title: "Safwat Bilal: مهندس برمجيات (Mid-Level Frontend · Junior Backend) | React, Next.js, NestJS",
     description:
       "مهندس برمجيات تخرّج عام 2026 في هندسة المعلوماتية (اختصاص هندسة البرمجيات، جامعة حلب). Mid-Level Frontend Developer يبني منصات ويب متعددة الأدوار: لوحات تحكم، واشتراكات، وميزات فورية، باستخدام React وNext.js وTypeScript، مع خبرة مبتدئة في الـ Backend بـ Node.js وNestJS، وMicro-frontends، والتكامل مع خدمات خارجية (بوابات الدفع، Zoom، SDKs).",
   },
@@ -14,7 +14,18 @@ export const ar: Dictionary = {
     contact: "تواصل",
     cv: "السيرة الذاتية",
     cvNote: "(PDF بالإنجليزية)",
-    home: "صفوت بلال، الصفحة الرئيسية",
+    home: "Safwat Bilal، الصفحة الرئيسية",
+    homeShort: "الرئيسية",
+    expertise: "المهارات",
+    pageNotes: {
+      about: "أولاً: حلّال مسائل",
+      experience: "من متدرّب إلى الفريق المؤسس",
+      expertise: "مصنّفة حسب مكان استخدامها",
+      work: "افتح أي عمل لتقرأ قصته",
+      contact: "لنبنِ شيئاً معاً",
+      notFound: "هذه الصفحة سقطت عن اللوحة",
+    },
+    tagline: "مهندس برمجيات من حلب. واجهات واضحة لمنتجات معقّدة.",
     openMenu: "فتح القائمة",
     closeMenu: "إغلاق القائمة",
     menu: "القائمة",
@@ -24,17 +35,18 @@ export const ar: Dictionary = {
     newTab: "(يفتح في تبويب جديد)",
   },
   hero: {
-    label: "مهندس برمجيات (Mid-Level Frontend · Junior Backend) · دفعة 2026",
     heading: "واجهات واضحة لمنتجات معقّدة.",
-    lead: "أنا صفوت بلال، مهندس برمجيات من حلب، سوريا. تخرّجت هذا العام (2026) في هندسة المعلوماتية، اختصاص هندسة البرمجيات. أعمل Mid-Level Frontend Developer مع خلفية قوية في Problem Solving (Specialist على Codeforces، وأكثر من 1500 مسألة خوارزمية)، ولديّ معرفة مبتدئة بالـ Backend عبر Node.js وNestJS. منذ 2023 أعمل على الجانب الداخلي من منتجات حقيقية: لوحات تحكم لصنّاع المعرفة، ومسارات الاشتراك والدفع، وتطبيقات للمبيعات الميدانية.",
-    proof: [
-      { label: "حالياً", text: "Frontend Developer في Kadnya، منصة لصنّاع المعرفة العرب" },
-      { label: "الفريق المؤسس", text: "Tredro: شركة ناشئة نبنيها مع سوق الجملة، ونتواصل الآن مع التجار" },
-      { label: "Problem Solving", text: "Specialist على Codeforces، وأكثر من 1500 مسألة، والمرتبة العاشرة في حلب (ACPC 2022–2023)" },
-      { label: "Backend", text: "مستوى مبتدئ مع Node.js وNestJS، في طريقي إلى Full-stack" },
+    lead: "مهندس برمجيات من حلب. أبني لوحات تحكم، ومسارات اشتراك ودفع، وتطبيقات للمبيعات الميدانية باستخدام React وNext.js.",
+    facts: [
+      { label: "المدينة", value: "حلب، سوريا" },
+      { label: "حالياً", value: "Kadnya" },
+      { label: "الشهادة", value: "هندسة المعلوماتية، 2026" },
+      { label: "التقنيات", value: "React, Next.js, TS" },
     ],
-    ctaWork: "استعرض الأعمال",
-    ctaCv: "تحميل السيرة الذاتية",
+    note: "لديك منتج تريد بناءه؟ لنتحدّث.",
+    sayHello: "قل مرحباً",
+    openFor: "متاح لفرص جديدة",
+    cvLabel: "السيرة",
   },
   work: {
     eyebrow: "الأعمال",
@@ -97,6 +109,8 @@ export const ar: Dictionary = {
     title: "ما أعمل عليه",
     intro: "مصنّفة حسب المكان الذي استخدمتها فيه فعلاً.",
     usedIn: "استُخدمت في:",
+    toolsTitle: "الأدوات التي أستخدمها",
+    stickers: ["Multi-role dashboards", "Micro-frontends", "Payments & real-time", "Web to Android", "Backend: Node & NestJS", "Problem Solving"],
     items: [
       {
         title: "واجهات منتجات متعددة الأدوار",
@@ -118,6 +132,16 @@ export const ar: Dictionary = {
         text: "تطبيقات ويب محزّمة كتطبيقات Android باستخدام Capacitor، فيعمل الكود نفسه في المتصفح وعلى الهاتف.",
         where: ["Tredro"],
       },
+      {
+        title: "Backend بـ Node.js وNestJS",
+        text: "واجهات REST API ومنطق الخادم باستخدام Node.js وNestJS، مع Express وMongoDB. كتبت الـ Backend بـ NestJS لمشروع Turbo Type، وهو الجانب الذي أطوّره بعد ذلك.",
+        where: ["Turbo Type"],
+      },
+      {
+        title: "Problem Solving",
+        text: "برمجة تنافسية: Specialist على Codeforces، وأكثر من 1500 مسألة على Codeforces وAtCoder وCSES، والمرتبة العاشرة في حلب (ACPC 2022–2023).",
+        where: ["Codeforces"],
+      },
     ],
     stackGroups: ["اللغات", "Frameworks", "البيانات والـ State", "Forms والتحقق", "UI", "Backend (مستوى مبتدئ)", "البنية والتكاملات", "المنصات", "سير العمل"],
   },
@@ -125,7 +149,7 @@ export const ar: Dictionary = {
     eyebrow: "نبذة",
     title: "الخلفية",
     paragraphs: [
-      "درست هندسة المعلوماتية، اختصاص هندسة البرمجيات، في جامعة حلب وتخرّجت عام 2026. قبل أن أعمل في الـ Frontend، شاركت في البرمجة التنافسية: وصلت إلى مستوى Specialist على Codeforces، وحللت أكثر من 1500 مسألة على Codeforces وAtCoder وCSES، وفي موسم 2022–2023 حللت في المرتبة العاشرة فردياً على مستوى حلب، وحلّ فريقي في المرتبة السادسة على مستوى حلب والثانية والعشرين على مستوى سوريا.",
+      "تخرّجت عام 2026 في هندسة المعلوماتية، اختصاص هندسة البرمجيات، من جامعة حلب. قبل أن أعمل في الـ Frontend، شاركت في البرمجة التنافسية: وصلت إلى مستوى Specialist على Codeforces، وحللت أكثر من 1500 مسألة على Codeforces وAtCoder وCSES، وفي موسم 2022–2023 حللت في المرتبة العاشرة فردياً على مستوى حلب، وحلّ فريقي في المرتبة السادسة على مستوى حلب والثانية والعشرين على مستوى سوريا.",
       "ما زالت هذه الخلفية تشكّل طريقة عملي. المنتج الكبير في جوهره مسألة صعبة تُقسَّم إلى أجزاء صغيرة يمكن توقّع سلوكها، وهذا الجزء من عمل الـ Frontend هو أكثر ما أستمتع به.",
       "خبرتي المهنية في الـ Frontend. وعلى جانب الـ Backend لديّ مستوى مبتدئ في Node.js وNestJS (كتبت الـ Backend لمشروعي الشخصي Turbo Type بـ NestJS)، تساعدني على فهم الـ APIs التي تعتمد عليها واجهاتي، وهو الجانب الذي أعمل على تطويره الآن.",
     ],
@@ -154,10 +178,10 @@ export const ar: Dictionary = {
     outcome: "النتيجة",
     screenshots: "لقطات",
     next: "المشروع التالي",
-    email: "راسل صفوت",
+    email: "راسل Safwat",
     titleSuffix: "دراسة حالة",
   },
-  footer: { builtWith: "بُني باستخدام Next.js وTypeScript", email: "البريد" },
+  footer: { builtWith: "بُني باستخدام Next.js وTypeScript", email: "البريد", thanks: "شكراً لزيارتك.", top: "للأعلى", pages: "الصفحات", elsewhere: "في أماكن أخرى" },
   notFound: {
     title: "هذه الصفحة غير موجودة.",
     text: "ربما الرابط قديم. لكن الأعمال ما زالت هنا.",

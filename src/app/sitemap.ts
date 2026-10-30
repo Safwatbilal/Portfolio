@@ -3,7 +3,7 @@ import { projectBases, siteUrl } from "@/content/shared";
 import { locales } from "@/i18n/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = ["", ...projectBases.map((p) => `/work/${p.slug}`)];
+  const paths = ["", "/about", "/experience", "/expertise", "/work", "/contact", ...projectBases.map((p) => `/work/${p.slug}`)];
   return paths.flatMap((path) =>
     locales.map((locale) => ({
       url: `${siteUrl}/${locale}${path}`,
