@@ -5,7 +5,7 @@ export const ar: Dictionary = {
   meta: {
     title: "Safwat Bilal | مهندس برمجيات (React, Next.js, NestJS)",
     description:
-      "Safwat Bilal، مهندس برمجيات من حلب. Frontend بـ React وNext.js، وBackend بـ Node.js وNestJS، وProblem Solving.",
+      "Safwat Bilal، مهندس برمجيات من حلب. Senior Frontend بـ React وNext.js، وBackend بـ Node.js وNestJS، وProblem Solving.",
     pages: {
       about: {
         title: "نبذة: Frontend وBackend وProblem Solving",
@@ -63,7 +63,7 @@ export const ar: Dictionary = {
   },
   hero: {
     heading: "واجهات واضحة لمنتجات معقّدة.",
-    lead: "مهندس برمجيات من حلب. Frontend (React, Next.js)، وBackend (Node.js, NestJS)، وProblem Solving (Specialist على Codeforces).",
+    lead: "مهندس برمجيات من حلب. Senior Frontend (React, Next.js)، وBackend (Node.js, NestJS)، وProblem Solving (Specialist على Codeforces).",
     facts: [
       { label: "المدينة", value: "حلب، سوريا" },
       { label: "حالياً", value: "Kadnya" },
@@ -170,7 +170,7 @@ export const ar: Dictionary = {
         where: ["Codeforces"],
       },
     ],
-    stackGroups: ["اللغات", "Frameworks", "البيانات والـ State", "Forms والتحقق", "UI", "Backend (مستوى مبتدئ)", "البنية والتكاملات", "المنصات", "سير العمل"],
+    stackGroups: ["اللغات", "Frameworks", "البيانات والـ State", "Forms والتحقق", "UI", "Backend", "البنية والتكاملات", "المنصات", "سير العمل"],
   },
   about: {
     eyebrow: "نبذة",
@@ -178,7 +178,7 @@ export const ar: Dictionary = {
     paragraphs: [
       "تخرّجت عام 2026 في هندسة المعلوماتية، اختصاص هندسة البرمجيات، من جامعة حلب. قبل أن أعمل في الـ Frontend، شاركت في البرمجة التنافسية: وصلت إلى مستوى Specialist على Codeforces، وحللت أكثر من 1500 مسألة على Codeforces وAtCoder وCSES، وفي موسم 2022–2023 حللت في المرتبة العاشرة فردياً على مستوى حلب، وحلّ فريقي في المرتبة السادسة على مستوى حلب والثانية والعشرين على مستوى سوريا.",
       "ما زالت هذه الخلفية تشكّل طريقة عملي. المنتج الكبير في جوهره مسألة صعبة تُقسَّم إلى أجزاء صغيرة يمكن توقّع سلوكها، وهذا الجزء من عمل الـ Frontend هو أكثر ما أستمتع به.",
-      "خبرتي المهنية في الـ Frontend. وعلى جانب الـ Backend لديّ مستوى مبتدئ في Node.js وNestJS (كتبت الـ Backend لمشروعي الشخصي Turbo Type بـ NestJS)، تساعدني على فهم الـ APIs التي تعتمد عليها واجهاتي، وهو الجانب الذي أعمل على تطويره الآن.",
+      "خبرتي المهنية في الـ Frontend. وعلى جانب الـ Backend أعمل بـ Node.js وNestJS (كتبت الـ Backend لمشروعي الشخصي Turbo Type بـ NestJS)، تساعدني على فهم الـ APIs التي تعتمد عليها واجهاتي، وهو الجانب الذي أعمل على تطويره الآن.",
     ],
     facts: [
       { label: "المكان", value: "حلب، سوريا (UTC+3)" },
@@ -190,7 +190,7 @@ export const ar: Dictionary = {
   contact: {
     eyebrow: "تواصل",
     heading: "لنتواصل",
-    text: "أنا منفتح على فرص Mid-Level Frontend أو Junior Full-stack جديدة، بما فيها العمل عن بُعد. البريد الإلكتروني أسرع طريقة للتواصل معي.",
+    text: "أنا منفتح على فرص Senior Frontend جديدة (مع شيء من الـ Backend)، بما فيها العمل عن بُعد. البريد الإلكتروني أسرع طريقة للتواصل معي.",
     copy: "نسخ البريد",
     copied: "تم النسخ",
   },

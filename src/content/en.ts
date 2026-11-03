@@ -5,7 +5,7 @@ export const en: Dictionary = {
   meta: {
     title: "Safwat Bilal | Software Engineer (React, Next.js, NestJS)",
     description:
-      "Safwat Bilal, software engineer from Aleppo. Frontend with React and Next.js, backend with Node.js and NestJS, and problem solving (Codeforces Specialist).",
+      "Safwat Bilal, software engineer from Aleppo. Senior frontend with React and Next.js, plus backend with Node.js and NestJS, and problem solving (Codeforces Specialist).",
     pages: {
       about: {
         title: "About: Frontend, Backend & Problem Solving",
@@ -63,7 +63,7 @@ export const en: Dictionary = {
   },
   hero: {
     heading: "Clear interfaces for complex products.",
-    lead: "Software engineer from Aleppo. Frontend (React, Next.js), backend (Node.js, NestJS) and problem solving (Codeforces Specialist).",
+    lead: "Software engineer from Aleppo. Senior frontend (React, Next.js), backend (Node.js, NestJS) and problem solving (Codeforces Specialist).",
     facts: [
       { label: "Based", value: "Aleppo, Syria" },
       { label: "Now", value: "Kadnya" },
@@ -173,7 +173,7 @@ export const en: Dictionary = {
         where: ["Codeforces"],
       },
     ],
-    stackGroups: ["Languages", "Frameworks", "Data & state", "Forms & validation", "UI", "Backend (junior)", "Architecture & integrations", "Platforms", "Workflow"],
+    stackGroups: ["Languages", "Frameworks", "Data & state", "Forms & validation", "UI", "Backend", "Architecture & integrations", "Platforms", "Workflow"],
   },
   about: {
     eyebrow: "About",
@@ -181,7 +181,7 @@ export const en: Dictionary = {
     paragraphs: [
       "I graduated in 2026 in Information Engineering from the University of Aleppo, majoring in Software Engineering. Before I worked on frontend, I did competitive programming: I reached Specialist on Codeforces and solved more than 1,500 problems on Codeforces, AtCoder and CSES, and in the 2022–2023 season I placed 10th individually in Aleppo, and my team placed 6th in Aleppo and 22nd in Syria.",
       "That background still shapes how I work. A large product is mostly a hard problem broken into small pieces that behave predictably, and that is the part of frontend work I enjoy most.",
-      "My professional experience is on the frontend. On the backend, I'm at a junior level with Node.js and NestJS (I wrote the NestJS backend of Turbo Type, a personal project), which helps me understand the APIs my interfaces depend on, and it is the side I am growing next.",
+      "My professional experience is on the frontend. On the backend, I work with Node.js and NestJS (I wrote the NestJS backend of Turbo Type, a personal project), which helps me understand the APIs my interfaces depend on, and it is the side I am growing next.",
     ],
     facts: [
       { label: "Based in", value: "Aleppo, Syria (UTC+3)" },
@@ -193,7 +193,7 @@ export const en: Dictionary = {
   contact: {
     eyebrow: "Contact",
     heading: "Get in touch",
-    text: "I'm open to new mid-level frontend or junior full-stack opportunities, including remote roles. Email is the fastest way to reach me.",
+    text: "I'm open to new senior frontend opportunities (with some backend), including remote roles. Email is the fastest way to reach me.",
     copy: "Copy email",
     copied: "Copied",
   },
