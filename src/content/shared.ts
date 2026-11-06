@@ -18,7 +18,7 @@ export const profile = {
   },
 } as const;
 
-export type ProjectSlug = "kadnya" | "tredro" | "nebu" | "suttor" | "turbotype" | "az1";
+export type ProjectSlug = "kadnya" | "tredro" | "nebu" | "suttor" | "turbotype" | "az1" | "syreus";
 
 export type ProjectBase = {
   slug: ProjectSlug;
@@ -92,6 +92,16 @@ export const projectBases: ProjectBase[] = [
     href: "https://az1-holding-3d.vercel.app",
     hrefLabel: "az1-holding-3d.vercel.app",
     visual: "az1",
+  },
+  {
+    slug: "syreus",
+    index: "07",
+    logo: "/logos/syreus.svg",
+    tags: ["Next.js", "TypeScript", "React Query", "Capacitor"],
+    status: "live",
+    href: "https://syreus.sy",
+    hrefLabel: "syreus.sy",
+    visual: "syreus",
   },
 ];
 
