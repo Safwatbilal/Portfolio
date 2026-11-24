@@ -5,7 +5,7 @@ export const en: Dictionary = {
   meta: {
     title: "Safwat Bilal | Software Engineer (React, Next.js, NestJS)",
     description:
-      "Safwat Bilal, software engineer from Aleppo. Frontend with React and Next.js, backend with Node.js and NestJS, and problem solving (Codeforces Specialist).",
+      "Safwat Bilal, software engineer from Aleppo. Senior frontend with React and Next.js, plus backend with Node.js and NestJS, and problem solving (Codeforces Specialist).",
     pages: {
       about: {
         title: "About: Frontend, Backend & Problem Solving",
@@ -63,7 +63,7 @@ export const en: Dictionary = {
   },
   hero: {
     heading: "Clear interfaces for complex products.",
-    lead: "Software engineer from Aleppo. Frontend (React, Next.js), backend (Node.js, NestJS) and problem solving (Codeforces Specialist).",
+    lead: "Software engineer from Aleppo. Senior frontend (React, Next.js), backend (Node.js, NestJS) and problem solving (Codeforces Specialist).",
     facts: [
       { label: "Based", value: "Aleppo, Syria" },
       { label: "Now", value: "Kadnya" },
@@ -173,7 +173,7 @@ export const en: Dictionary = {
         where: ["Codeforces"],
       },
     ],
-    stackGroups: ["Languages", "Frameworks", "Data & state", "Forms & validation", "UI", "Backend (junior)", "Architecture & integrations", "Platforms", "Workflow"],
+    stackGroups: ["Languages", "Frameworks", "Data & state", "Forms & validation", "UI", "Backend", "Architecture & integrations", "Platforms", "Workflow"],
   },
   about: {
     eyebrow: "About",
@@ -181,7 +181,7 @@ export const en: Dictionary = {
     paragraphs: [
       "I graduated in 2026 in Information Engineering from the University of Aleppo, majoring in Software Engineering. Before I worked on frontend, I did competitive programming: I reached Specialist on Codeforces and solved more than 1,500 problems on Codeforces, AtCoder and CSES, and in the 2022–2023 season I placed 10th individually in Aleppo, and my team placed 6th in Aleppo and 22nd in Syria.",
       "That background still shapes how I work. A large product is mostly a hard problem broken into small pieces that behave predictably, and that is the part of frontend work I enjoy most.",
-      "My professional experience is on the frontend. On the backend, I'm at a junior level with Node.js and NestJS (I wrote the NestJS backend of Turbo Type, a personal project), which helps me understand the APIs my interfaces depend on, and it is the side I am growing next.",
+      "My professional experience is on the frontend. On the backend, I work with Node.js and NestJS (I wrote the NestJS backend of Turbo Type, a personal project), which helps me understand the APIs my interfaces depend on, and it is the side I am growing next.",
     ],
     facts: [
       { label: "Based in", value: "Aleppo, Syria (UTC+3)" },
@@ -193,7 +193,7 @@ export const en: Dictionary = {
   contact: {
     eyebrow: "Contact",
     heading: "Get in touch",
-    text: "I'm open to new mid-level frontend or junior full-stack opportunities, including remote roles. Email is the fastest way to reach me.",
+    text: "I'm open to new senior frontend opportunities (with some backend), including remote roles. Email is the fastest way to reach me.",
     copy: "Copy email",
     copied: "Copied",
   },
@@ -250,6 +250,11 @@ export const en: Dictionary = {
     "sector-technology": "Technology & Innovation sector scene",
     global: "Global perspective, with a 3D globe",
     contact: "Contact page",
+    "syreus-website": "The syreus.sy website",
+    "learner-home": "Learner home: the latest article and the roadmaps to start with",
+    roadmaps: "Roadmaps, each split into sections and short lessons",
+    skills: "Skills: typing speed, the command line and prompt engineering",
+    "typing-course": "The typing course, stage by stage",
   },
   projects: {
     kadnya: {
@@ -483,6 +488,67 @@ export const en: Dictionary = {
         ],
         notes: [],
         outcome: "Live at az1-holding-3d.vercel.app.",
+      },
+    },
+    syreus: {
+      name: "SYREUS",
+      oneLiner:
+        "An Arabic platform for learning to code: step-by-step roadmaps, short lessons, developer skills like typing and the command line, a community and a scoreboard.",
+      myPart: "One of the three engineers behind it. I built the learner app, the admin panel and the website.",
+      role: "Software Engineer · founding team",
+      period: "2026 – present",
+      place: "Syria",
+      visualAlt: "The SYREUS website: “Your road to the stars starts with one line of code.”",
+      caseStudy: {
+        summary:
+          "SYREUS is an Arabic platform that takes learners from their first line of code toward their first job. We are a team of three; I built the frontends: the learner app, the admin panel and the website.",
+        meta: [
+          { label: "Role", value: "Software Engineer on the founding team (team of three)" },
+          { label: "Period", value: "2026 – present" },
+          { label: "Stack", value: "Next.js, TypeScript, Tailwind CSS, React Query, Zustand, Capacitor" },
+          { label: "Platforms", value: "Web + Android (Capacitor)" },
+        ],
+        links: [
+          { label: "syreus.sy", href: "https://syreus.sy" },
+          { label: "Learner app", href: "https://app.syreus.sy" },
+        ],
+        product:
+          "SYREUS Student is where learners study. They pick a roadmap (Programming Foundations, Frontend, Backend, Git and GitHub, Django, Node + Nest, Networking, Problem Solving), split into sections and short lessons, and their progress is saved. Next to the roadmaps are developer skills: typing speed, the command line and prompt engineering. Around them sit live sessions, a community, a blog, a scoreboard and rewards. Everything can be browsed without an account.",
+        problem:
+          "Many people who want to learn to code get lost among videos, learn alone, and have no one to review their work. SYREUS gives them one clear road, in Arabic, with mentors and a community along the way.",
+        structure: {
+          title: "three apps, one platform",
+          items: [
+            {
+              name: "Learner app, SYREUS Student",
+              detail:
+                "Roadmaps and lessons, skills, lives, community, blog, notifications, scoreboard, rewards, profiles and settings. A web app that is also packaged for Android.",
+            },
+            {
+              name: "Admin panel",
+              detail: "Dashboard, batches, clients, events, blog editing, points, and reviews of learners' work.",
+            },
+            { name: "Website", detail: "syreus.sy: the story, how it works, the tracks and the team, in English and Arabic." },
+          ],
+        },
+        builtHeading: "What I did",
+        built: [
+          { title: "Built all three frontends", text: "The learner app, the admin panel and the syreus.sy website, in Next.js and TypeScript." },
+          {
+            title: "Roadmaps and skills",
+            text: "Roadmaps with sections, lessons and saved progress, plus the skill courses: a 739-lesson typing course with placement tests, drills and games, a command line course and a prompt engineering course.",
+          },
+          { title: "Community and content", text: "Community posts, a blog and a rich-text editor, a scoreboard, rewards and public profiles." },
+          {
+            title: "Shipped to web and Android with Capacitor",
+            text: "The learner app runs in the browser and as an Android app, with push notifications and social sign-in.",
+          },
+        ],
+        notes: [
+          "The backend is built by a teammate; my side is the frontends and their integration with its API.",
+          "Every learner-facing page can be browsed without an account, so the app has to work for both visitors and signed-in learners.",
+        ],
+        outcome: "Live at syreus.sy, with the learner app at app.syreus.sy.",
       },
     },
   },

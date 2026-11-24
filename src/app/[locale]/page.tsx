@@ -24,7 +24,7 @@ export default async function Home(props: PageProps<"/[locale]">) {
     "@type": "Person",
     name: profile.name,
     alternateName: profile.nameAr,
-    jobTitle: "Software Engineer (Mid-Level Frontend · Junior Backend)",
+    jobTitle: "Software Engineer (Senior Frontend · Backend)",
     description: d.meta.description,
     image: `${siteUrl}/portrait-yellow.jpg`,
     url: `${siteUrl}/${locale}`,

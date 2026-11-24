@@ -2101,6 +2101,12 @@ main {
 .lost .btn-row {
   margin-top: 26px;
 }
+.lost .lost-ar {
+  margin-top: 28px;
+  font-size: var(--t-h3, 1.5rem);
+  font-weight: 700;
+  line-height: 1.3;
+}
 
 /* ---------- Footer on the board ---------- */
 .foot {
